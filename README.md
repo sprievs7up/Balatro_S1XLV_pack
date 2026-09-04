@@ -1,7 +1,7 @@
 # SIXLV BALATRO PACK
 
 <p align="center">
-  <img src="assets/2x/balatrolv.png" alt="SIXLV BALATRO PACK" width="666">
+  <img src="balatrolv.png" alt="SIXLV BALATRO PACK" width="666">
 </p>
 
 **当前版本：** `v0.1.3`
