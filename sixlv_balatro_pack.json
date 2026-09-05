@@ -1,0 +1,17 @@
+{
+  "id": "sixlv_balatro_pack",
+  "name": "SIXLV BALATRO PACK",
+  "display_name": "SIXLV BALATRO PACK",
+  "author": ["S1XLV"],
+  "description": "A unified vanilla-style pack containing Balance Patch, Bulky Stakes, and the four-deck S1XLV Deck Pack.",
+  "prefix": "sixlv",
+  "main_file": "main.lua",
+  "icon_path": "s1xlv_icon.png",
+  "priority": 0,
+  "badge_colour": "D9B672",
+  "badge_text_colour": "4F6367",
+  "version": "0.1.6",
+  "dependencies": [
+    "Steamodded (==1.0.0~)"
+  ]
+}

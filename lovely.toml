@@ -1,0 +1,102 @@
+[manifest]
+version = "1.0.0"
+dump_lua = false
+priority = 0
+
+# Interest uses the vanilla $5/$1 calculation unless Gold Stake sets the
+# bbp_interest_basis and bbp_interest_scale modifiers.
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "if G.GAME.dollars >= 5 and not G.GAME.modifiers.no_interest then"
+position = "at"
+payload = '''
+local bbp_interest_basis = G.GAME.modifiers.bbp_interest_basis or 5
+local bbp_interest_scale = G.GAME.modifiers.bbp_interest_scale or 1
+local bbp_effective_interest_amount = G.GAME.interest_amount * bbp_interest_scale
+if G.GAME.dollars >= bbp_interest_basis and not G.GAME.modifiers.no_interest then
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "add_round_eval_row({bonus = true, name='interest', pitch = pitch, dollars = G.GAME.interest_amount*math.min(math.floor(G.GAME.dollars/5), G.GAME.interest_cap/5)})"
+position = "at"
+payload = "add_round_eval_row({bonus = true, name='interest', pitch = pitch, dollars = bbp_effective_interest_amount*math.min(math.floor(G.GAME.dollars/bbp_interest_basis), G.GAME.interest_cap/bbp_interest_basis)})"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "if G.GAME.interest_amount*math.min(math.floor(G.GAME.dollars/5), G.GAME.interest_cap/5) == G.GAME.interest_amount*G.GAME.interest_cap/5 then"
+position = "at"
+payload = "if bbp_effective_interest_amount*math.min(math.floor(G.GAME.dollars/bbp_interest_basis), G.GAME.interest_cap/bbp_interest_basis) == bbp_effective_interest_amount*G.GAME.interest_cap/bbp_interest_basis then"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "dollars = dollars + G.GAME.interest_amount*math.min(math.floor(G.GAME.dollars/5), G.GAME.interest_cap/5)"
+position = "at"
+payload = "dollars = dollars + bbp_effective_interest_amount*math.min(math.floor(G.GAME.dollars/bbp_interest_basis), G.GAME.interest_cap/bbp_interest_basis)"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "table.insert(left_text,{n=G.UIT.O, config={object = DynaText({string = {\" \"..localize{type = 'variable', key = 'interest', vars = {G.GAME.interest_amount, 5, G.GAME.interest_amount*G.GAME.interest_cap/5}}}, colours = {G.C.UI.TEXT_LIGHT}, shadow = true, pop_in = 0, scale = 0.4*scale, silent = true})}})"
+position = "at"
+payload = '''
+local bbp_interest_basis = G.GAME.modifiers.bbp_interest_basis or 5
+local bbp_interest_scale = G.GAME.modifiers.bbp_interest_scale or 1
+local bbp_effective_interest_amount = G.GAME.interest_amount * bbp_interest_scale
+table.insert(left_text,{n=G.UIT.O, config={object = DynaText({string = {" "..localize{type = 'variable', key = 'interest', vars = {bbp_effective_interest_amount, bbp_interest_basis, bbp_effective_interest_amount*G.GAME.interest_cap/bbp_interest_basis}}}, colours = {G.C.UI.TEXT_LIGHT}, shadow = true, pop_in = 0, scale = 0.4*scale, silent = true})}})
+'''
+match_indent = true
+
+# Magic Trick keeps the vanilla shop weight for playing cards, but every
+# playing card it adds is drawn from the eight vanilla Enhancement centers.
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''{type = (G.GAME.used_vouchers["v_illusion"] and pseudorandom(pseudoseed('illusion')) > 0.6) and 'Enhanced' or 'Base', val = G.GAME.playing_card_rate},'''
+position = "at"
+payload = '''{type = (G.GAME.used_vouchers["v_magic_trick"] or G.GAME.used_vouchers["v_illusion"]) and 'Enhanced' or 'Base', val = G.GAME.playing_card_rate},'''
+match_indent = true
+
+# Illusion gives each shop playing card exactly one of three equally likely
+# finishes: Edition only, Seal only, or both. Edition and Seal subtypes retain
+# their vanilla distributions.
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''              if (v.type == 'Base' or v.type == 'Enhanced') and G.GAME.used_vouchers["v_illusion"] and pseudorandom(pseudoseed('illusion')) > 0.8 then 
+                card:set_edition(poll_edition('illusion', nil, true, true))
+              end'''
+position = "at"
+payload = '''              if (v.type == 'Base' or v.type == 'Enhanced') and G.GAME.used_vouchers["v_illusion"] then
+                local finish_poll = pseudorandom(pseudoseed('bbp_illusion_finish'..G.GAME.round_resets.ante))
+                local add_edition = finish_poll < 1/3 or finish_poll >= 2/3
+                local add_seal = finish_poll >= 1/3
+
+                if add_edition then
+                  local edition_poll = pseudorandom(pseudoseed('bbp_illusion_edition'..G.GAME.round_resets.ante))
+                  local edition = {}
+                  if edition_poll > 0.85 then edition.polychrome = true
+                  elseif edition_poll > 0.5 then edition.holo = true
+                  else edition.foil = true
+                  end
+                  card:set_edition(edition)
+                end
+
+                if add_seal then
+                  local seal_poll = pseudorandom(pseudoseed('bbp_illusion_seal'..G.GAME.round_resets.ante))
+                  if seal_poll > 0.75 then card:set_seal('Red', true)
+                  elseif seal_poll > 0.5 then card:set_seal('Blue', true)
+                  elseif seal_poll > 0.25 then card:set_seal('Gold', true)
+                  else card:set_seal('Purple', true)
+                  end
+                end
+              end'''
+match_indent = false
