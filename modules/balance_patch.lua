@@ -451,7 +451,7 @@ take_joker('mail', {
 
 -- Faceless Joker
 take_joker('faceless', {
-    config = { extra = { dollars = 8, faces = 3 } },
+    config = { extra = { dollars = 6, faces = 3 } },
 })
 
 -- Hanging Chad

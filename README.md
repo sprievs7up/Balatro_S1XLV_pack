@@ -19,6 +19,7 @@ The mod is still being tested and refined. Current values are not final.
 - Icebound Deck now gains `+3` hands per round instead of `+2`.
 - Matador's cost has been reduced from `$10` to `$8`.
 - Hanging Chad's cost has been increased from `$4` to `$5`.
+- Faceless Joker now gives `$6` instead of `$8` when its discard condition is met.
 
 ---
 
@@ -41,7 +42,7 @@ The mod is still being tested and refined. Current values are not final.
 | ![Arrowhead](assets/readme/1x/jokers/arrowhead.png) | Arrowhead | Each scored Spade now gives `+40` Chips instead of `+50`. |
 | ![Green Joker](assets/readme/1x/jokers/green_joker.png) | Green Joker | Starts at `+0` Mult; gains `+1` Mult per hand played and loses `2` Mult per discard, with a minimum of `0`. |
 | ![Mail-In Rebate](assets/readme/1x/jokers/mail_in_rebate.png) | Mail-In Rebate | Each discarded card of the listed rank now gives `$4` instead of `$5`. |
-| ![Faceless Joker](assets/readme/1x/jokers/faceless_joker.png) | Faceless Joker | Discarding at least 3 face cards now gives `$8` instead of `$5`. |
+| ![Faceless Joker](assets/readme/1x/jokers/faceless_joker.png) | Faceless Joker | Discarding at least 3 face cards now gives `$6` instead of `$5`. |
 | ![Hanging Chad](assets/readme/1x/jokers/hanging_chad.png) | Hanging Chad | Rarity changed from Common to Uncommon; costs `$5`. |
 | ![Vampire](assets/readme/1x/jokers/vampire.png) | Vampire | Gains `X0.15` Mult per scored Enhanced Card instead of `X0.1`. |
 | ![Gros Michel](assets/readme/1x/jokers/gros_michel.png) | Gros Michel | Its end-of-round extinction chance is now `1 in 10` instead of `1 in 6`. |
@@ -210,6 +211,7 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 - 冻洋牌组每回合增加的出牌次数由 `+2` 提高至 `+3`。
 - 斗牛士的售价由 `$10` 降低至 `$8`。
 - 未断选票的售价由 `$4` 提高至 `$5`。
+- 无面小丑满足弃牌条件时的收益由 `$8` 降低至 `$6`。
 
 ---
 
@@ -232,7 +234,7 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 | ![箭头](assets/readme/1x/jokers/arrowhead.png) | 箭头 | 每张计分黑桃牌由 `+50` 降低至 `+40` 筹码。 |
 | ![绿色小丑](assets/readme/1x/jokers/green_joker.png) | 绿色小丑 | 初始拥有 `+0` 倍率；每次出牌 `+1` 倍率，每次弃牌 `-2` 倍率，最低不会低于 `0`。 |
 | ![邮件回扣](assets/readme/1x/jokers/mail_in_rebate.png) | 邮件回扣 | 每张符合本回合指定点数的弃牌，收益由 `$5` 降低至 `$4`。 |
-| ![无面小丑](assets/readme/1x/jokers/faceless_joker.png) | 无面小丑 | 一次弃掉至少 3 张人头牌时，收益由 `$5` 提高至 `$8`。 |
+| ![无面小丑](assets/readme/1x/jokers/faceless_joker.png) | 无面小丑 | 一次弃掉至少 3 张人头牌时，收益由 `$5` 提高至 `$6`。 |
 | ![未断选票](assets/readme/1x/jokers/hanging_chad.png) | 未断选票 | 品质由普通改为罕见，售价提高至 `$5`。 |
 | ![吸血鬼](assets/readme/1x/jokers/vampire.png) | 吸血鬼 | 每移除一张计分的加强牌，成长由 `X0.1` 提高至 `X0.15`。 |
 | ![大麦克香蕉](assets/readme/1x/jokers/gros_michel.png) | 大麦克香蕉 | 回合结束时的自毁概率由 `1/6` 降低至 `1/10`。 |
