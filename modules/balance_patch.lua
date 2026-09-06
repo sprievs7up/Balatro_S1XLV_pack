@@ -457,6 +457,7 @@ take_joker('faceless', {
 -- Hanging Chad
 take_joker('hanging_chad', {
     rarity = 2,
+    cost = 5,
 })
 
 -- Vampire
@@ -542,7 +543,7 @@ take_joker('loyalty_card', {
 -- Matador
 take_joker('matador', {
     rarity = 3,
-    cost = 10,
+    cost = 8,
     config = { extra = 8 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra } }

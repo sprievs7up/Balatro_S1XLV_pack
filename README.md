@@ -6,7 +6,7 @@
 
 ## English
 
-**Current version:** `v0.1.6`
+**Current version:** `v0.1.7`
 
 SIXLV BALATRO PACK is a vanilla-style content and balance mod for *Balatro*.
 
@@ -14,12 +14,11 @@ It adds four decks and two high-difficulty Stakes, while adjusting selected vani
 
 The mod is still being tested and refined. Current values are not final.
 
-## v0.1.6 Update
+## v0.1.7 Update
 
-- All four custom decks are available from the start.
-- Ordered the custom decks as Cartomancer, Icebound, Small, then Inferno.
-- Rebalanced Flower Pot to Rare with an `$8` cost and `X1.25 / X2.5 / X4` Mult for 2, 3, or 4 scoring suits.
-- Adjusted Bootstraps to give `+3` Mult per `$5` held.
+- Icebound Deck now gains `+3` hands per round instead of `+2`.
+- Matador's cost has been reduced from `$10` to `$8`.
+- Hanging Chad's cost has been increased from `$4` to `$5`.
 
 ---
 
@@ -43,14 +42,14 @@ The mod is still being tested and refined. Current values are not final.
 | ![Green Joker](assets/readme/1x/jokers/green_joker.png) | Green Joker | Starts at `+0` Mult; gains `+1` Mult per hand played and loses `2` Mult per discard, with a minimum of `0`. |
 | ![Mail-In Rebate](assets/readme/1x/jokers/mail_in_rebate.png) | Mail-In Rebate | Each discarded card of the listed rank now gives `$4` instead of `$5`. |
 | ![Faceless Joker](assets/readme/1x/jokers/faceless_joker.png) | Faceless Joker | Discarding at least 3 face cards now gives `$8` instead of `$5`. |
-| ![Hanging Chad](assets/readme/1x/jokers/hanging_chad.png) | Hanging Chad | Rarity changed from Common to Uncommon. |
+| ![Hanging Chad](assets/readme/1x/jokers/hanging_chad.png) | Hanging Chad | Rarity changed from Common to Uncommon; costs `$5`. |
 | ![Vampire](assets/readme/1x/jokers/vampire.png) | Vampire | Gains `X0.15` Mult per scored Enhanced Card instead of `X0.1`. |
 | ![Gros Michel](assets/readme/1x/jokers/gros_michel.png) | Gros Michel | Its end-of-round extinction chance is now `1 in 10` instead of `1 in 6`. |
 | ![Séance](assets/readme/1x/jokers/seance.png) | Séance | Playing a Straight Flush creates a random Negative Spectral card, even when the consumable area is full. |
 | ![Erosion](assets/readme/1x/jokers/erosion.png) | Erosion | Gains `+5` Mult per card missing from the full deck instead of `+4`. |
 | ![Hiker](assets/readme/1x/jokers/hiker.png) | Hiker | Costs `$7`; scored cards permanently gain `+1` Mult instead of `+5` Chips. |
 | ![Loyalty Card](assets/readme/1x/jokers/loyalty_card.png) | Loyalty Card | Rarity changed from Uncommon to Common. |
-| ![Matador](assets/readme/1x/jokers/matador.png) | Matador | Rare, costs `$10`, and gives `$8` per trigger. |
+| ![Matador](assets/readme/1x/jokers/matador.png) | Matador | Rare, costs `$8`, and gives `$8` per trigger. |
 | ![Superposition](assets/readme/1x/jokers/superposition.png) | Superposition | Now Rare and costs `$10`; a Straight containing an Ace creates a Negative copy of the last Tarot or Planet card used. |
 | ![Red Card](assets/readme/1x/jokers/red_card.png) | Red Card | Skipping a Booster Pack now adds `+4` Mult instead of `+3`. |
 | ![Square Joker](assets/readme/1x/jokers/square_joker.png) | Square Joker | Starts with `+16` Chips and continues to gain `+4` Chips per qualifying hand. |
@@ -153,7 +152,7 @@ A Tarot-focused deck with no Planet cards or Blue Seals.
 
 ![Icebound Deck](assets/1x/icebound_back.png)
 
-- `+2` hands per round.
+- `+3` hands per round.
 - Starts with `0` discards.
 - Earns `$1` for every `2` hands remaining; an unmatched remaining hand gives no payout.
 
@@ -198,7 +197,7 @@ A Tarot-focused deck with no Planet cards or Blue Seals.
 
 ## 简体中文
 
-**当前版本：** `v0.1.6`
+**当前版本：** `v0.1.7`
 
 SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内容及平衡调整模组。
 
@@ -206,12 +205,11 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 
 当前版本仍在持续测试与调整，现有数值不代表最终版本。
 
-## v0.1.6 更新
+## v0.1.7 更新
 
-- 四副新增牌组现在均可直接使用。
-- 新增牌组依次排列为占卜师、冻洋、小牌组、炼狱。
-- 将花盆调整为稀有品质、售价 `$8`，得分牌包含 2、3、4 种花色时分别提供 `X1.25 / X2.5 / X4` 倍率。
-- 将提靴带调整为每持有 `$5` 提供 `+3` 倍率。
+- 冻洋牌组每回合增加的出牌次数由 `+2` 提高至 `+3`。
+- 斗牛士的售价由 `$10` 降低至 `$8`。
+- 未断选票的售价由 `$4` 提高至 `$5`。
 
 ---
 
@@ -235,14 +233,14 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 | ![绿色小丑](assets/readme/1x/jokers/green_joker.png) | 绿色小丑 | 初始拥有 `+0` 倍率；每次出牌 `+1` 倍率，每次弃牌 `-2` 倍率，最低不会低于 `0`。 |
 | ![邮件回扣](assets/readme/1x/jokers/mail_in_rebate.png) | 邮件回扣 | 每张符合本回合指定点数的弃牌，收益由 `$5` 降低至 `$4`。 |
 | ![无面小丑](assets/readme/1x/jokers/faceless_joker.png) | 无面小丑 | 一次弃掉至少 3 张人头牌时，收益由 `$5` 提高至 `$8`。 |
-| ![未断选票](assets/readme/1x/jokers/hanging_chad.png) | 未断选票 | 品质由普通改为罕见。 |
+| ![未断选票](assets/readme/1x/jokers/hanging_chad.png) | 未断选票 | 品质由普通改为罕见，售价提高至 `$5`。 |
 | ![吸血鬼](assets/readme/1x/jokers/vampire.png) | 吸血鬼 | 每移除一张计分的加强牌，成长由 `X0.1` 提高至 `X0.15`。 |
 | ![大麦克香蕉](assets/readme/1x/jokers/gros_michel.png) | 大麦克香蕉 | 回合结束时的自毁概率由 `1/6` 降低至 `1/10`。 |
 | ![通灵](assets/readme/1x/jokers/seance.png) | 通灵 | 打出同花顺时生成一张随机负片幻灵牌；消耗牌栏已满时仍可生成。 |
 | ![侵蚀](assets/readme/1x/jokers/erosion.png) | 侵蚀 | 完整牌组每减少一张牌的成长由 `+4` 提高至 `+5` 倍率。 |
 | ![徒步者](assets/readme/1x/jokers/hiker.png) | 徒步者 | 售价改为 `$7`；每张计分牌由永久 `+5` 筹码改为永久 `+1` 倍率。 |
 | ![积分卡](assets/readme/1x/jokers/loyalty_card.png) | 积分卡 | 品质由罕见改为普通。 |
-| ![斗牛士](assets/readme/1x/jokers/matador.png) | 斗牛士 | 稀有品质，售价 `$10`，每次触发获得 `$8`。 |
+| ![斗牛士](assets/readme/1x/jokers/matador.png) | 斗牛士 | 稀有品质，售价 `$8`，每次触发获得 `$8`。 |
 | ![叠加态](assets/readme/1x/jokers/superposition.png) | 叠加态 | 改为稀有品质、售价 `$10`；带 A 的顺子会生成上一次使用的塔罗牌或星球牌的负片版本。 |
 | ![红牌](assets/readme/1x/jokers/red_card.png) | 红牌 | 每跳过一个补充包，由 `+3` 提高至 `+4` 倍率。 |
 | ![方形小丑](assets/readme/1x/jokers/square_joker.png) | 方形小丑 | 初始获得 `+16` 筹码，之后每次成长 `+4` 筹码。 |
@@ -345,7 +343,7 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 
 ![冻洋牌组](assets/1x/icebound_back.png)
 
-- 每回合 `+2` 次出牌。
+- 每回合 `+3` 次出牌。
 - 初始弃牌次数为 `0`。
 - 每 `2` 次剩余出牌获得 `$1`；不足 `2` 次的余数不结算。
 

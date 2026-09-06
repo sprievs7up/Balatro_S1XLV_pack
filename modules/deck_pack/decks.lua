@@ -56,7 +56,7 @@ return function(context)
         pos = { x = 0, y = 0 },
         unlocked = true,
         config = {
-            hands = 2,
+            hands = 3,
             starting_discards = 0,
         },
         loc_vars = function(self)
