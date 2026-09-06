@@ -118,6 +118,17 @@ local function install_matador_hooks()
                     reason = 'needle',
                     repetitions = math.max(0, self.hands_sub or 0),
                 }
+            elseif blind_matches(self, 'bl_manacle', 'The Manacle') then
+                self.bbp_matador_entry_event = {
+                    reason = 'manacle',
+                    repetitions = 1,
+                }
+            elseif blind_matches(self, 'bl_final_acorn', 'Amber Acorn')
+                and G.jokers and #G.jokers.cards > 0 then
+                self.bbp_matador_entry_event = {
+                    reason = 'amber_acorn',
+                    repetitions = 1,
+                }
             end
         end
 
@@ -216,11 +227,14 @@ local function install_matador_hooks()
 
     MATADOR.blind_press_play = Blind.press_play
     function Blind:press_play()
+        local played_cards = G
+            and G.hand
+            and G.hand.highlighted
+            and #G.hand.highlighted
+            or 0
         local tooth_triggered = is_active_boss(self)
             and blind_matches(self, 'bl_tooth', 'The Tooth')
-            and G.play
-            and #G.play.cards > 0
-        local played_cards = tooth_triggered and #G.play.cards or 0
+            and played_cards > 0
         local result = MATADOR.blind_press_play(self)
         self.bbp_matador_tooth_remaining = tooth_triggered and played_cards or nil
         return result

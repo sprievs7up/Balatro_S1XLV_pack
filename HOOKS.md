@@ -24,12 +24,12 @@ scoring contexts can still trigger it.
 
 | Hook | Purpose | Normal fallback |
 | --- | --- | --- |
-| Blind:set_blind | Clears per-Blind Matador state and records the Water/Needle entry penalty. | Returns the original set_blind result. |
+| Blind:set_blind | Clears per-Blind Matador state and records the Water, Needle, Manacle, or Amber Acorn entry event. | Returns the original set_blind result. |
 | G.FUNCS.draw_from_deck_to_hand | Records whether a real draw is about to occur, including Serpent's three-card rule. | Calls the original draw function first. |
 | Blind:stay_flipped | Detects when Wheel, House, Mark, or Fish actually turns a drawn card face down. | Returns the original face-down decision. |
 | Blind:drawn_to_hand | After the original Blind callback, emits the matching Matador context for entry, draw, face-down, Crimson Heart, or Cerulean Bell effects. | Does nothing unless an active Boss effect was observed. |
 | G.FUNCS.discard_cards_from_highlighted | Detects cards discarded by The Hook and emits one Matador context. | Preserves the original discard return value. |
-| Blind:press_play | Counts cards affected by The Tooth before its individual dollar deductions begin. | Returns the original press_play result. |
+| Blind:press_play | Counts the highlighted cards selected for The Tooth before their queued move into the play area. | Returns the original press_play result. |
 | ease_dollars | Emits The Tooth's Matador context after the final non-instant $1 deduction. | Returns the original money result for every call. |
 
 Balance Patch also takes ownership of selected vanilla Jokers, Vouchers, and

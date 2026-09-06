@@ -22,6 +22,8 @@ The mod is still being tested and refined. Current values are not final.
 - Faceless Joker now gives `$6` instead of `$8` when its discard condition is met.
 - Inferno Deck's Ante 10 base score is now `240,000 / 500,000 / 1,000,000 / 2,000,000` across the White, Green, Purple, and Joker scaling tiers.
 - Inferno Deck shop Jokers, Buffoon Pack choices, and Jokers created by Judgement now use a `60% / 25% / 15%` Common/Uncommon/Rare split. Other Joker-generation sources are unchanged.
+- Fixed Matador failing to trigger against The Tooth because played cards had not entered the play area when the Boss callback began.
+- Matador now triggers once after The Manacle's entry penalty and once after Amber Acorn finishes its Joker shuffle.
 
 ---
 
@@ -217,6 +219,8 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 - 无面小丑满足弃牌条件时的收益由 `$8` 降低至 `$6`。
 - 炼狱牌组第 10 底注的基础分数按照白、绿、紫和小丑注缩放档位调整为 `240,000 / 500,000 / 1,000,000 / 2,000,000`。
 - 炼狱牌组中，商店自然生成的小丑牌、小丑包候选以及《审判》生成的小丑牌，其普通／罕见／稀有概率调整为 `60% / 25% / 15%`；其他小丑牌生成来源不变。
+- 修复斗牛士面对牙齿时，因出牌尚未进入出牌区而无法触发的问题。
+- 斗牛士现在会在手铐的入场惩罚结算后触发一次，并在琥珀橡子完成小丑牌洗牌后触发一次。
 
 ---
 
