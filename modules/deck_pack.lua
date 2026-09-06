@@ -48,7 +48,17 @@ local settings = {
         hand_size_bonus = 4,
         ante_offset = 2,
         first_hand_levels = 2,
-        ante_ten_multiplier = 2.5,
+        joker_rarity_weights = {
+            common = 0.60,
+            uncommon = 0.25,
+            rare = 0.15,
+        },
+        ante_ten_base_amounts = {
+            [1] = 240000,
+            [2] = 500000,
+            [3] = 1000000,
+            joker = 2000000,
+        },
         win_ante = 10,
         starting_jokers = {
             'j_greedy_joker',
@@ -222,7 +232,8 @@ hook_state.booster_weight_multipliers = settings.cartomancer.booster_weight_mult
 hook_state.planet_vouchers = settings.cartomancer.planet_vouchers
 hook_state.judgement_base_cost = settings.cartomancer.judgement_base_cost
 hook_state.black_hole_key = settings.cartomancer.black_hole_key
-hook_state.inferno_ante_ten_multiplier = settings.inferno.ante_ten_multiplier
+hook_state.inferno_joker_rarity_weights = settings.inferno.joker_rarity_weights
+hook_state.inferno_ante_ten_base_amounts = settings.inferno.ante_ten_base_amounts
 
 local context = {
     settings = settings,

@@ -20,6 +20,8 @@ The mod is still being tested and refined. Current values are not final.
 - Matador's cost has been reduced from `$10` to `$8`.
 - Hanging Chad's cost has been increased from `$4` to `$5`.
 - Faceless Joker now gives `$6` instead of `$8` when its discard condition is met.
+- Inferno Deck's Ante 10 base score is now `240,000 / 500,000 / 1,000,000 / 2,000,000` across the White, Green, Purple, and Joker scaling tiers.
+- Inferno Deck shop Jokers, Buffoon Pack choices, and Jokers created by Judgement now use a `60% / 25% / 15%` Common/Uncommon/Rare split. Other Joker-generation sources are unchanged.
 
 ---
 
@@ -173,6 +175,7 @@ A Tarot-focused deck with no Planet cards or Blue Seals.
 - Starts with Greedy Joker, Lusty Joker, Wrathful Joker, and Gluttonous Joker.
 - Starts `+2` Antes ahead.
 - The poker hand played on the first hand of the run permanently gains `2` levels and scores at its upgraded level immediately.
+- Shop Jokers, Buffoon Pack choices, and Jokers created by Judgement use a `60% / 25% / 15%` Common/Uncommon/Rare split. Other Joker-generation sources retain their normal rarity odds.
 
 ---
 
@@ -212,6 +215,8 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 - 斗牛士的售价由 `$10` 降低至 `$8`。
 - 未断选票的售价由 `$4` 提高至 `$5`。
 - 无面小丑满足弃牌条件时的收益由 `$8` 降低至 `$6`。
+- 炼狱牌组第 10 底注的基础分数按照白、绿、紫和小丑注缩放档位调整为 `240,000 / 500,000 / 1,000,000 / 2,000,000`。
+- 炼狱牌组中，商店自然生成的小丑牌、小丑包候选以及《审判》生成的小丑牌，其普通／罕见／稀有概率调整为 `60% / 25% / 15%`；其他小丑牌生成来源不变。
 
 ---
 
@@ -366,6 +371,7 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 - 初始获得贪婪小丑、色欲小丑、愤怒小丑与暴食小丑。
 - 游戏底注 `+2`。
 - 本赛局第一手出牌所形成的牌型永久提升 `2` 级，并按提升后的等级计分。
+- 商店自然生成的小丑牌、小丑包候选以及《审判》生成的小丑牌，其普通／罕见／稀有概率为 `60% / 25% / 15%`；其他来源保持原有概率。
 
 ---
 

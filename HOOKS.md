@@ -78,8 +78,9 @@ The Deck Pack is split into four files:
 | Back:init | Copies the Small Deck low/high-contrast atlas fields to its runtime Back instance. | Calls the original initializer and returns its result. |
 | Back:change_to | Updates or clears those atlas fields while browsing between deck backs. | Calls the original change function first. |
 | Back:load | Restores the contrast-specific atlas fields after a saved run is loaded. | Calls the original load function first. |
+| create_card | Gives Inferno shop Jokers, Buffoon Pack choices, and Judgement a 60/25/15 Common/Uncommon/Rare split. | Explicit cards or rarities, Legendary rolls, other generation sources, and other decks delegate unchanged. |
 | Game:start_run | Installs the Inferno score wrapper against the final get_blind_amount chain for the new run. | Delegates the run startup unchanged. |
-| Dynamic get_blind_amount wrapper | Makes Inferno Ante 10 equal to 2.5 times the delegated Ante 9 amount. | Delegates every other Ante and every non-Inferno run. |
+| Dynamic get_blind_amount wrapper | Applies Inferno's fixed Ante 10 base score for the active Stake scaling tier. | Delegates every other Ante and every non-Inferno run. |
 
 ### Small Deck hooks
 
