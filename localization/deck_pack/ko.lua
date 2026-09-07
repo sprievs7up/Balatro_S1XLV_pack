@@ -37,6 +37,16 @@ return {
                     "플레이한 카드는 덱으로 돌아갑니다",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "그랜드 마스터 덱",
+                text = {
+                    "{C:attention}소모품{} 슬롯에",
+                    "{C:attention}조커{}를 놓을 수 있습니다",
+                    "{C:red}#2#{} 앤티마다",
+                    "{C:attention}특별한 보스 블라인드{} 등장",
+                    "승리 앤티 {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

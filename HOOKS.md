@@ -56,7 +56,7 @@ All hooks in this section are installed once through BSK.hooks_installed.
 | Card:check_use | Prevents Ankh when no legal copy arrangement fits, while retaining normal booster selection behaviour. | Delegates for non-Ankh cards and valid uses. |
 | create_card | Removes stickers from Jokers created through the explicitly stickerless source keys. Editions remain intact. | Returns the original created card. |
 | Card:use_consumeable | Marks an Ankh use until its delayed copy is constructed. | Delegates the actual consumable use. |
-| copy_card | Selects a legal copy target and squeezes incompatible Jokers for Invisible Joker or Ankh. | Calls the original copier with the resolved source. |
+| copy_card | Selects a legal copy target and squeezes incompatible cards for Invisible Joker or Ankh. In Grand Master runs, Invisible Joker resolves capacity in its own area and may squeeze cards from that area. | Calls the original copier with the resolved source. |
 | get_blind_amount | Supplies the Joker Stake Ante table and its endless continuation. | Delegates unless Joker Stake scaling is active. |
 
 The Bulky Sticker and the Australium/Joker Stakes are registered through
@@ -64,12 +64,13 @@ Steamodded objects; those registrations are not global hooks.
 
 ## S1XLV Deck Pack
 
-The Deck Pack is split into four files:
+The Deck Pack is split into five files:
 
 - modules/deck_pack/back_hooks.lua
 - modules/deck_pack/decks.lua
 - modules/deck_pack/small_recycling.lua
 - modules/deck_pack/cartomancer_rules.lua
+- modules/deck_pack/grandmaster.lua
 
 ### Back and Inferno hooks
 
@@ -101,6 +102,24 @@ The Deck Pack is split into four files:
 | SMODS.poll_seal | Gives Blue Seal zero weight during natural Cartomancer seal rolls. | Restores Blue Seal's original weight and getter after the roll. |
 | create_card_for_shop | Replaces a Blue Seal added directly by Illusion with an equal Red/Gold/Purple roll. | Returns all other generated shop cards unchanged. |
 | create_card | Temporarily bans Black Hole during unforced soulable Planet/Spectral generation. | Explicit forced keys and direct card creation remain allowed. |
+
+### Grand Master hooks
+
+| Hook | Purpose | Normal fallback |
+| --- | --- | --- |
+| get_new_boss | Uses a four-Ante Showdown cadence while preserving Ante 12 as Grand Master's true win condition. | Delegates unchanged outside Grand Master runs and restores `G.GAME.win_ante` immediately after every selection. |
+| G.FUNCS.check_for_buy_space | Lets a Joker use a free consumable slot after the standard Joker area is full. | Delegates for other decks and non-Joker cards. |
+| CardArea:emplace | Routes an overflowing Joker into the consumable area, preferring the standard Joker area whenever it has room. | Preserves the requested destination outside Grand Master runs. |
+| G.FUNCS.can_select_card / can_select_from_booster | Enables selecting a Joker from a pack when only a consumable slot is available. | Preserves the original selection result otherwise. |
+| Card:can_use_consumeable | Lets Judgement, The Soul, and Wraith use a free consumable slot for the Joker they create. | Delegates all other use checks. |
+| Card:stop_drag | Moves Jokers between the standard and consumable areas when dropped over the other area. Consumables are never moved into the Joker area. | Preserves ordinary same-area dragging and every non-Grand-Master run. |
+| Card:generate_UIBox_ability_table | Displays Abstract Joker's combined count and the local Blueprint/Brainstorm compatibility state. | Delegates other tooltip generation. |
+| Card:update | Makes Blueprint, Brainstorm, and Joker Stencil read their own area; Swashbuckler totals Joker sell values from both areas. | Delegates other card updates. |
+| Card:calculate_joker | Applies same-area Blueprint, Brainstorm, Ceremonial Dagger, and Joker Stencil rules; limits Madness victims to same-area Jokers; handles combined Abstract Joker counting, cross-area Invisible Joker targets, consumable-slot Riff-raff room, and a true-consumable-only Perkeo target pool. | Delegates all other calculations. |
+| set_joker_usage / set_joker_win / set_joker_loss | Includes Joker cards from both playable areas in usage, win-sticker, and loss bookkeeping while excluding ordinary consumables. | Delegates unchanged outside Grand Master runs. |
+
+Amber Acorn and Crimson Heart retain their vanilla `G.jokers` targeting. They
+do not shuffle, flip, or debuff Jokers in the consumable area.
 
 ### Deck Pack ownership proxies
 

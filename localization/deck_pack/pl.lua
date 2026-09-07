@@ -40,6 +40,16 @@ return {
                     "Zagrane karty wracają do talii",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Talia Wielkiego Mistrza",
+                text = {
+                    "Miejsca na {C:attention}karty zużywalne{} mogą",
+                    "pomieścić {C:attention}Jokery{}",
+                    "Co {C:red}#2#{} ante walczysz z",
+                    "{C:attention}specjalnym Boss Blindem{}",
+                    "Ante zwycięstwa {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

@@ -39,6 +39,16 @@ return {
                     "Le carte giocate ritornano nel mazzo",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Mazzo del Gran Maestro",
+                text = {
+                    "Gli slot {C:attention}consumabili{} possono",
+                    "contenere {C:attention}Joker{}",
+                    "Affronta un {C:attention}Boss Blind speciale{}",
+                    "ogni {C:red}#2#{} Ante",
+                    "Ante per vincere {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

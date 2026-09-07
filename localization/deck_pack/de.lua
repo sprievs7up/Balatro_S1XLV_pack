@@ -38,6 +38,16 @@ return {
                     "Gespielte Karten kehren ins Deck zurück",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Meisterdeck",
+                text = {
+                    "{C:attention}Verbrauchskartenplätze{} können",
+                    "{C:attention}Joker{} aufnehmen",
+                    "Alle {C:red}#2#{} Antes erscheint",
+                    "ein {C:attention}spezieller Boss Blind{}",
+                    "Sieg-Ante {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

@@ -40,6 +40,16 @@ return {
                     "Les cartes jouées reviennent dans le jeu",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Jeu du grand maître",
+                text = {
+                    "Les emplacements de {C:attention}consommables{}",
+                    "peuvent accueillir des {C:attention}Jokers{}",
+                    "Affrontez une {C:attention}Blinde Boss spéciale{}",
+                    "toutes les {C:red}#2#{} Antes",
+                    "Mise de victoire {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

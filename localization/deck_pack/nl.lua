@@ -40,6 +40,16 @@ return {
                     "Gespeelde kaarten gaan terug in het kaartspel",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Grootmeesterkaartspel",
+                text = {
+                    "Vakken voor {C:attention}verbruikskaarten{} kunnen",
+                    "{C:attention}Jokers{} bevatten",
+                    "Elke {C:red}#2#{} antes een",
+                    "{C:attention}speciale baasblind{}",
+                    "Winnende ante {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

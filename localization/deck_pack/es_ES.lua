@@ -39,6 +39,16 @@ return {
                     "Las cartas jugadas vuelven a la baraja",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Baraja de gran maestro",
+                text = {
+                    "Los espacios de {C:attention}consumibles{} pueden",
+                    "albergar {C:attention}comodines{}",
+                    "Enfréntate a una {C:attention}Ciega Jefe especial{}",
+                    "cada {C:red}#2#{} apuestas",
+                    "Apuesta para ganar {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

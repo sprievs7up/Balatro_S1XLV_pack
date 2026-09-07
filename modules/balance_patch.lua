@@ -470,7 +470,7 @@ take_joker('faceless', {
 
 -- Hanging Chad
 take_joker('hanging_chad', {
-    rarity = 2,
+    rarity = 1,
     cost = 5,
 })
 
@@ -531,7 +531,7 @@ take_joker('erosion', {
 
 -- Hiker
 take_joker('hiker', {
-    cost = 7,
+    cost = 5,
     config = { extra = 1 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra } }

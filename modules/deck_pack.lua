@@ -10,6 +10,7 @@ local settings = {
         cartomancer = 'b_cartomancer_deck',
         inferno = 'b_cartomancer_inferno',
         small = 'b_cartomancer_small',
+        grandmaster = 'b_cartomancer_grandmaster',
     },
     cartomancer = {
         shop_rates = {
@@ -91,6 +92,11 @@ local settings = {
             'Diamonds',
         },
     },
+    grandmaster = {
+        ante_bonus = 4,
+        win_ante = 12,
+        showdown_interval = 4,
+    },
     tarot = {
         enhanced_max_highlighted = {
             c_magician = 3,
@@ -162,6 +168,10 @@ local function is_small_run()
     return run_uses('small_deck', settings.keys.small)
 end
 
+local function is_grandmaster_run()
+    return run_uses('grandmaster_deck', settings.keys.grandmaster)
+end
+
 local function small_recycle_enabled(modifier_key, default_value)
     if not is_small_run() then return false end
 
@@ -222,6 +232,7 @@ hook_state.tarot_originals = hook_state.tarot_originals or {}
 hook_state.is_cartomancer_run = is_cartomancer_run
 hook_state.is_inferno_run = is_inferno_run
 hook_state.is_small_run = is_small_run
+hook_state.is_grandmaster_run = is_grandmaster_run
 hook_state.small_recycle_enabled = small_recycle_enabled
 hook_state.small_recycle_seed = small_recycle_seed
 hook_state.shuffle_card_batch = shuffle_card_batch
@@ -242,6 +253,7 @@ local context = {
     is_cartomancer_run = is_cartomancer_run,
     is_inferno_run = is_inferno_run,
     is_small_run = is_small_run,
+    is_grandmaster_run = is_grandmaster_run,
 }
 
 local sections = {
@@ -249,6 +261,7 @@ local sections = {
     'modules/deck_pack/decks.lua',
     'modules/deck_pack/small_recycling.lua',
     'modules/deck_pack/cartomancer_rules.lua',
+    'modules/deck_pack/grandmaster.lua',
 }
 
 local function load_section(path)

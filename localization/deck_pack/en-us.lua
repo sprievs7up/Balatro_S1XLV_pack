@@ -37,6 +37,16 @@ return {
                     "Played cards return to the deck",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Grand Master Deck",
+                text = {
+                    "{C:attention}Consumable{} slots can be used as",
+                    "{C:attention}Joker{} slots",
+                    "Face a {C:attention}special Boss Blind{}",
+                    "every {C:red}#2#{} Antes",
+                    "Win Ante {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

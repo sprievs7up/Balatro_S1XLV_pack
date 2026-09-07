@@ -37,6 +37,16 @@ return {
                     "プレイしたカードはデッキに戻る",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "グランドマスターデッキ",
+                text = {
+                    "{C:attention}消耗品{}スロットに",
+                    "{C:attention}ジョーカー{}を置ける",
+                    "{C:red}#2#{}アンティごとに",
+                    "{C:attention}特別なボスブラインド{}が出現",
+                    "勝利アンティ {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

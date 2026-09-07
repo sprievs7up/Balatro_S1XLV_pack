@@ -40,6 +40,16 @@ return {
                     "Сыгранные карты возвращаются в колоду",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Колода гроссмейстера",
+                text = {
+                    "Ячейки {C:attention}расходников{} можно",
+                    "занимать {C:attention}джокерами{}",
+                    "Каждые {C:red}#2#{} анте —",
+                    "{C:attention}особый босс-блайнд{}",
+                    "Анте для победы {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

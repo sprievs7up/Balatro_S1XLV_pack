@@ -300,23 +300,41 @@ local function copied_slot_values(card)
     return usage, gain
 end
 
-local function current_joker_slot_state()
+local function current_joker_slot_state(area)
+    area = area or (G and G.jokers)
     local used = 0
-    for _, card in ipairs((G and G.jokers and G.jokers.cards) or {}) do
+    for _, card in ipairs((area and area.cards) or {}) do
         used = used + joker_slot_usage(card)
     end
 
-    local limits = G
-        and G.jokers
-        and G.jokers.config
-        and G.jokers.config.card_limits
+    local limits = area
+        and area.config
+        and area.config.card_limits
     local total = limits and limits.total_slots
-        or ((G and G.jokers and G.jokers.config and G.jokers.config.card_limit) or 0)
+        or ((area and area.config and area.config.card_limit) or 0)
     return used, total
 end
 
+local function invisible_copy_area(source)
+    return BSK.invisible_copy_area
+        or (source and source.area)
+        or (G and G.jokers)
+end
+
+local function invisible_target_areas()
+    local areas = { G and G.jokers }
+    if G
+        and G.GAME
+        and G.GAME.modifiers
+        and G.GAME.modifiers.grandmaster_deck
+        and G.consumeables then
+        areas[#areas + 1] = G.consumeables
+    end
+    return areas
+end
+
 local function invisible_copy_overflow(source, target, removed)
-    local used, total = current_joker_slot_state()
+    local used, total = current_joker_slot_state(invisible_copy_area(source))
     removed = removed or {}
 
     used = used - joker_slot_usage(source)
@@ -344,8 +362,9 @@ local function plan_invisible_copy(source, target)
         return target, {}
     end
 
+    local destination = invisible_copy_area(source)
     local squeeze_pool = {}
-    for _, card in ipairs(G.jokers.cards) do
+    for _, card in ipairs((destination and destination.cards) or {}) do
         if card ~= source
             and card ~= target
             and not card.getting_sliced
@@ -372,12 +391,16 @@ local function plan_invisible_copy(source, target)
 
     -- Fall back to a target that fits after Invisible Joker is sold.
     local alternatives = {}
-    for _, card in ipairs(G.jokers.cards) do
-        if card ~= source
-            and card ~= target
-            and not card.getting_sliced
-            and invisible_copy_overflow(source, card) <= 0 then
-            alternatives[#alternatives + 1] = card
+    for _, area in ipairs(invisible_target_areas()) do
+        for _, card in ipairs((area and area.cards) or {}) do
+            if card ~= source
+                and card ~= target
+                and card.ability
+                and card.ability.set == 'Joker'
+                and not card.getting_sliced
+                and invisible_copy_overflow(source, card) <= 0 then
+                alternatives[#alternatives + 1] = card
+            end
         end
     end
 

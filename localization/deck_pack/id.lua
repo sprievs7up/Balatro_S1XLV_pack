@@ -40,6 +40,16 @@ return {
                     "Kartu yang dimainkan kembali ke deck",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Grand Master Deck",
+                text = {
+                    "Slot {C:attention}Consumable{} dapat diisi",
+                    "{C:attention}Joker{}",
+                    "Hadapi {C:attention}Boss Blind spesial{}",
+                    "setiap {C:red}#2#{} Ante",
+                    "Ante kemenangan {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

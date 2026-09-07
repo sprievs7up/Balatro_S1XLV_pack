@@ -20,13 +20,11 @@ return {
             b_cartomancer_inferno = {
                 name = "煉獄牌組",
                 text = {
-                    "{s:0.8}手牌上限{C:attention}+#1#{}",
+                    "{s:0.8}開局時額外獲得{C:money}$#8#{}，手牌上限{C:attention}+#1#{}",
                     "{s:0.8}初始獲得{C:attention}#3#{}、{C:attention}#4#{}、",
                     "{s:0.8}{C:attention}#5#{}、{C:attention}#6#{}",
                     "{s:0.8}遊戲底注{C:red}+#2#{}",
-                    "{s:0.8}第一手出牌的牌型",
-                    "{s:0.8}等級{C:attention}+#7#{}",
-                    "{s:0.8}開局時額外獲得{C:money}$#8#{}",
+                    "{s:0.8}第一手出牌的牌型等級{C:attention}+#7#{}",
                 },
             },
             b_cartomancer_small = {
@@ -35,6 +33,14 @@ return {
                     "開局時，牌組有{C:clubs}#1#張梅花{}",
                     "和{C:diamonds}#1#張方塊{}",
                     "打出的牌會返回牌組",
+                },
+            },
+            b_cartomancer_grandmaster = {
+                name = "大師牌組",
+                text = {
+                    "消耗牌欄位可作{C:attention}小丑牌欄位{}",
+                    "每{C:red}#2#{}個底注遭遇{C:attention}特殊的Boss盲注{}",
+                    "通關底注{C:red}+#1#{}",
                 },
             },
         },

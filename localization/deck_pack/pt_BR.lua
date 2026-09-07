@@ -40,6 +40,16 @@ return {
                     "As cartas jogadas retornam ao baralho",
                 },
             },
+            b_cartomancer_grandmaster = {
+                name = "Baralho do Grão-Mestre",
+                text = {
+                    "Espaços de {C:attention}consumíveis{} podem",
+                    "conter {C:attention}Curingas{}",
+                    "Enfrente uma {C:attention}Aposta Chefe especial{}",
+                    "a cada {C:red}#2#{} Apostas",
+                    "Aposta da vitória {C:red}+#1#{}",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

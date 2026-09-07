@@ -5,6 +5,7 @@ return function(context)
     local icebound = settings.icebound
     local inferno = settings.inferno
     local small = settings.small
+    local grandmaster = settings.grandmaster
 
     local function register_back_atlas(key, path)
         SMODS.Atlas {
@@ -20,6 +21,7 @@ return function(context)
     register_back_atlas('small_back_lc', 'small_back_lc.png')
     register_back_atlas('small_back_hc', 'small_back_hc.png')
     register_back_atlas('inferno_back', 'inferno_back.png')
+    register_back_atlas('grandmaster_back', 'grandmaster_back.png')
 
     SMODS.Back {
         key = 'deck',
@@ -235,6 +237,27 @@ return function(context)
             G.GAME.modifiers.small_recycle_discarded_cards = small.recycle_discarded_cards
             G.GAME.small_pending_discard_ids = nil
             add_small_starting_cards()
+        end,
+    }
+
+    SMODS.Back {
+        key = 'grandmaster',
+        atlas = 'grandmaster_back',
+        pos = { x = 0, y = 0 },
+        unlocked = true,
+        config = {},
+        loc_vars = function()
+            return {
+                vars = {
+                    grandmaster.ante_bonus,
+                    grandmaster.showdown_interval,
+                },
+            }
+        end,
+        apply = function()
+            G.GAME.modifiers = G.GAME.modifiers or {}
+            G.GAME.modifiers.grandmaster_deck = true
+            G.GAME.win_ante = grandmaster.win_ante
         end,
     }
 
