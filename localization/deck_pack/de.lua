@@ -27,6 +27,7 @@ return {
                     "{s:0.8}Start-Ante {C:red}+#2#{}",
                     "{s:0.8}Die erste gespielte {C:attention}Pokerhand{}",
                     "{s:0.8}erhält {C:attention}+#7#{} Stufen",
+                    "{s:0.8}Beginne mit zusätzlich {C:money}$#8#{}",
                 },
             },
             b_cartomancer_small = {

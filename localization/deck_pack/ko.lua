@@ -26,6 +26,7 @@ return {
                     "{s:0.8}시작 앤티 {C:red}+#2#{}",
                     "{s:0.8}처음 플레이한 {C:attention}포커 핸드{}의",
                     "{s:0.8}레벨을 {C:attention}#7#{} 올립니다",
+                    "{s:0.8}추가로 {C:money}$#8#{}를 가지고 시작",
                 },
             },
             b_cartomancer_small = {

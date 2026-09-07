@@ -29,6 +29,7 @@ return {
                     "{s:0.8}Aposta inicial {C:red}+#2#{}",
                     "{s:0.8}A primeira {C:attention}mão de pôquer{} jogada",
                     "{s:0.8}ganha {C:attention}+#7#{} níveis",
+                    "{s:0.8}Comece com {C:money}$#8#{} a mais",
                 },
             },
             b_cartomancer_small = {

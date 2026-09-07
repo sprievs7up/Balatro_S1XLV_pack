@@ -26,6 +26,7 @@ return {
                     "{s:0.8}遊戲底注{C:red}+#2#{}",
                     "{s:0.8}第一手出牌的牌型",
                     "{s:0.8}等級{C:attention}+#7#{}",
+                    "{s:0.8}開局時額外獲得{C:money}$#8#{}",
                 },
             },
             b_cartomancer_small = {

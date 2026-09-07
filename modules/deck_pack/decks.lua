@@ -146,6 +146,7 @@ return function(context)
         config = {
             hand_size = inferno.hand_size_bonus,
             ante = inferno.ante_offset,
+            dollars = inferno.starting_dollars,
         },
         loc_vars = function(self)
             return {
@@ -157,6 +158,7 @@ return function(context)
                     localize { type = 'name_text', set = 'Joker', key = inferno.starting_jokers[3] },
                     localize { type = 'name_text', set = 'Joker', key = inferno.starting_jokers[4] },
                     inferno.first_hand_levels,
+                    self.config.dollars,
                 },
             }
         end,

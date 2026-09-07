@@ -29,6 +29,7 @@ return {
                     "{s:0.8}Ante awal {C:red}+#2#{}",
                     "{s:0.8}{C:attention}Poker hand{} pertama yang dimainkan",
                     "{s:0.8}mendapat {C:attention}+#7#{} level",
+                    "{s:0.8}Mulai dengan tambahan {C:money}$#8#{}",
                 },
             },
             b_cartomancer_small = {

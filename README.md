@@ -6,7 +6,7 @@
 
 ## English
 
-**Current version:** `v0.1.7`
+**Current version:** `v0.1.7.1`
 
 SIXLV BALATRO PACK is a vanilla-style content and balance mod for *Balatro*.
 
@@ -14,14 +14,9 @@ It adds four decks and two high-difficulty Stakes, while adjusting selected vani
 
 The mod is still being tested and refined. Current values are not final.
 
-## v0.1.7 Update
+## v0.1.7.1 Update
 
-- Icebound Deck now gains `+3` hands per round instead of `+2`.
-- Matador's cost has been reduced from `$10` to `$8`.
-- Hanging Chad's cost has been increased from `$4` to `$5`.
-- Faceless Joker now gives `$6` instead of `$8` when its discard condition is met.
-- Inferno Deck's Ante 10 base score is now `240,000 / 500,000 / 1,000,000 / 2,000,000` across the White, Green, Purple, and Joker scaling tiers.
-- Fixed Matador failing to trigger against The Tooth because played cards had not entered the play area when the Boss callback began.
+- Inferno Deck now starts with an extra `$10`.
 
 ---
 
@@ -173,6 +168,7 @@ A Tarot-focused deck with no Planet cards or Blue Seals.
 
 - `+4` hand size.
 - Starts with Greedy Joker, Lusty Joker, Wrathful Joker, and Gluttonous Joker.
+- Starts with an extra `$10`.
 - Starts `+2` Antes ahead.
 - The poker hand played on the first hand of the run permanently gains `2` levels and scores at its upgraded level immediately.
 
@@ -200,7 +196,7 @@ A Tarot-focused deck with no Planet cards or Blue Seals.
 
 ## 简体中文
 
-**当前版本：** `v0.1.7`
+**当前版本：** `v0.1.7.1`
 
 SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内容及平衡调整模组。
 
@@ -208,14 +204,9 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 
 当前版本仍在持续测试与调整，现有数值不代表最终版本。
 
-## v0.1.7 更新
+## v0.1.7.1 更新
 
-- 冻洋牌组每回合增加的出牌次数由 `+2` 提高至 `+3`。
-- 斗牛士的售价由 `$10` 降低至 `$8`。
-- 未断选票的售价由 `$4` 提高至 `$5`。
-- 无面小丑满足弃牌条件时的收益由 `$8` 降低至 `$6`。
-- 炼狱牌组第 10 底注的基础分数按照白、绿、紫和小丑注缩放档位调整为 `240,000 / 500,000 / 1,000,000 / 2,000,000`。
-- 修复斗牛士面对牙齿时，因出牌尚未进入出牌区而无法触发的问题。
+- 炼狱牌组现在会在开局时额外获得 `$10`。
 
 ---
 
@@ -368,6 +359,7 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 
 - 手牌上限 `+4`。
 - 初始获得贪婪小丑、色欲小丑、愤怒小丑与暴食小丑。
+- 开局时额外获得 `$10`。
 - 游戏底注 `+2`。
 - 本赛局第一手出牌所形成的牌型永久提升 `2` 级，并按提升后的等级计分。
 

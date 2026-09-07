@@ -29,6 +29,7 @@ return {
                     "{s:0.8}Początkowe wejście {C:red}+#2#{}",
                     "{s:0.8}Pierwszy zagrany {C:attention}układ pokerowy{}",
                     "{s:0.8}zyskuje {C:attention}+#7#{} poziomy",
+                    "{s:0.8}Zacznij z dodatkowymi {C:money}$#8#{}",
                 },
             },
             b_cartomancer_small = {

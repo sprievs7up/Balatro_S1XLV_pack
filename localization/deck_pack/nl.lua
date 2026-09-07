@@ -29,6 +29,7 @@ return {
                     "{s:0.8}Startante {C:red}+#2#{}",
                     "{s:0.8}De eerste gespeelde {C:attention}pokerhand{}",
                     "{s:0.8}krijgt {C:attention}+#7#{} niveaus",
+                    "{s:0.8}Begin met {C:money}$#8#{} extra",
                 },
             },
             b_cartomancer_small = {

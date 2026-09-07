@@ -48,6 +48,7 @@ local settings = {
         hand_size_bonus = 4,
         ante_offset = 2,
         first_hand_levels = 2,
+        starting_dollars = 10,
         joker_rarity_weights = {
             common = 0.60,
             uncommon = 0.25,

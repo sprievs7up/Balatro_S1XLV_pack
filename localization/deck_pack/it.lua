@@ -28,6 +28,7 @@ return {
                     "{s:0.8}Ante iniziale {C:red}+#2#{}",
                     "{s:0.8}La prima {C:attention}mano di poker{} giocata",
                     "{s:0.8}ottiene {C:attention}+#7#{} livelli",
+                    "{s:0.8}Inizia con {C:money}$#8#{} extra",
                 },
             },
             b_cartomancer_small = {
