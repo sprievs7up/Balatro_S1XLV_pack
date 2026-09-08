@@ -216,21 +216,25 @@ return function(context)
         hc_atlas = 'small_back_hc',
         pos = { x = 0, y = 0 },
         unlocked = true,
-        config = {},
+        config = {
+            starting_discards = small.starting_discards,
+        },
         -- Removing every rank from the default whitelist suppresses the
         -- vanilla 52-card deck; apply() supplies the intended 26 cards.
         initial_deck = {
             ranks = {},
         },
-        loc_vars = function()
+        loc_vars = function(self)
             return {
                 vars = {
                     #small.ranks,
+                    self.config.starting_discards,
                 },
             }
         end,
-        apply = function(_, back)
+        apply = function(self, back)
             hooks.sync_back_contrast_atlases(back)
+            G.GAME.starting_params.discards = self.config.starting_discards
             G.GAME.modifiers = G.GAME.modifiers or {}
             G.GAME.modifiers.small_deck = true
             G.GAME.modifiers.small_recycle_played_cards = small.recycle_played_cards

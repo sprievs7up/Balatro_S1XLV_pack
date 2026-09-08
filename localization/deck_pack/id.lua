@@ -38,6 +38,8 @@ return {
                     "Mulai dengan {C:clubs}#1# Keriting{} dan",
                     "{C:diamonds}#1# Wajik{} di deck",
                     "Kartu yang dimainkan kembali ke deck",
+                    "Mulai setiap ronde dengan",
+                    "{C:red}#2#{} discard",
                 },
             },
             b_cartomancer_grandmaster = {

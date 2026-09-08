@@ -37,6 +37,8 @@ return {
                     "Comienza con {C:clubs}#1# tréboles{} y",
                     "{C:diamonds}#1# diamantes{} en la baraja",
                     "Las cartas jugadas vuelven a la baraja",
+                    "Empieza cada ronda con",
+                    "{C:red}#2#{} descartes",
                 },
             },
             b_cartomancer_grandmaster = {

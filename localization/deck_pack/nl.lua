@@ -38,6 +38,8 @@ return {
                     "Begin met {C:clubs}#1# klaveren{} en",
                     "{C:diamonds}#1# ruiten{} in het kaartspel",
                     "Gespeelde kaarten gaan terug in het kaartspel",
+                    "Begin elke ronde met",
+                    "{C:red}#2#{} aflegbeurten",
                 },
             },
             b_cartomancer_grandmaster = {

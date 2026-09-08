@@ -38,6 +38,8 @@ return {
                     "Rozpoczynasz podejście z",
                     "{C:clubs}#1# treflami{} oraz {C:diamonds}#1# kartami karo{}",
                     "Zagrane karty wracają do talii",
+                    "Każdą rundę zaczynasz z",
+                    "{C:red}#2#{} odrzuceniami",
                 },
             },
             b_cartomancer_grandmaster = {

@@ -38,6 +38,8 @@ return {
                     "Comece com {C:clubs}#1# Paus{} e",
                     "{C:diamonds}#1# Ouros{} no baralho",
                     "As cartas jogadas retornam ao baralho",
+                    "Comece cada rodada com",
+                    "{C:red}#2#{} descartes",
                 },
             },
             b_cartomancer_grandmaster = {

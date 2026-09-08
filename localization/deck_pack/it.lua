@@ -37,6 +37,8 @@ return {
                     "Inizia con {C:clubs}#1# Fiori{} e",
                     "{C:diamonds}#1# Quadri{} nel mazzo",
                     "Le carte giocate ritornano nel mazzo",
+                    "Inizia ogni round con",
+                    "{C:red}#2#{} scarti",
                 },
             },
             b_cartomancer_grandmaster = {

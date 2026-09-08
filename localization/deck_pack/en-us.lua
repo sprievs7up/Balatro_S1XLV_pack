@@ -35,6 +35,8 @@ return {
                     "Start with {C:clubs}#1# Clubs{} and",
                     "{C:diamonds}#1# Diamonds{}",
                     "Played cards return to the deck",
+                    "Start each round with",
+                    "{C:red}#2#{} discards",
                 },
             },
             b_cartomancer_grandmaster = {

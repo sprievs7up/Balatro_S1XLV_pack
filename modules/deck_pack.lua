@@ -70,6 +70,7 @@ local settings = {
         },
     },
     small = {
+        starting_discards = 2,
         recycle_played_cards = true,
         recycle_discarded_cards = false,
         ranks = {

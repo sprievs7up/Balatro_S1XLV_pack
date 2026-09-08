@@ -38,6 +38,8 @@ return {
                     "Commencez avec {C:clubs}#1# Trèfles{} et",
                     "{C:diamonds}#1# Carreaux{} dans votre jeu",
                     "Les cartes jouées reviennent dans le jeu",
+                    "Commencez chaque manche avec",
+                    "{C:red}#2#{} défausses",
                 },
             },
             b_cartomancer_grandmaster = {

@@ -17,6 +17,7 @@ The mod is still being tested and refined. Current values are not final.
 ## v0.1.8 Update
 
 - Adds the Grand Master Deck. Consumable slots can hold Jokers, a special Boss Blind appears every `4` Antes, and the run is won at Ante `12`.
+- Small Deck now starts with `2` discards per round instead of the default `3`.
 
 ---
 
@@ -159,6 +160,7 @@ A Tarot-focused deck with no Planet cards or Blue Seals.
 ![Small Deck](assets/1x/small_back_lc.png) ![Small Deck High Contrast](assets/1x/small_back_hc.png)
 
 - Starts with `26` cards: one complete A-K set in Clubs and one complete A-K set in Diamonds.
+- Starts with `2` discards per round.
 - After scoring and destruction effects resolve, surviving played cards are randomized and placed at the bottom of the deck.
 - Discarded cards continue to use the vanilla discard pile.
 
@@ -213,6 +215,7 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 ## v0.1.8 更新
 
 - 新增大师牌组：消耗牌栏位可作小丑牌栏位，每 `4` 个底注遭遇特殊的 Boss 盲注，通关底注 `+4`。
+- 小牌组的每回合初始弃牌次数由默认的 `3` 次降低至 `2` 次。
 
 ---
 
@@ -356,6 +359,7 @@ SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内
 ![小牌组（高饱和配色）](assets/1x/small_back_hc.png)
 
 - 初始牌组共 `26` 张牌，由一套梅花 A–K 和一套方片 A–K 组成。
+- 每回合初始拥有 `2` 次弃牌机会。
 - 计分及摧毁效果结算后，未被摧毁的出牌会打乱顺序并放到牌堆底部。
 - 弃牌仍进入原版弃牌堆。
 

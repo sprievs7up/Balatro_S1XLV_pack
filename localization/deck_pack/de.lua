@@ -36,6 +36,8 @@ return {
                     "Beginne mit {C:clubs}#1# Kreuz-Karten{} und",
                     "{C:diamonds}#1# Karo-Karten{} im Deck",
                     "Gespielte Karten kehren ins Deck zurück",
+                    "Beginne jede Runde mit",
+                    "{C:red}#2#{} Abwürfen",
                 },
             },
             b_cartomancer_grandmaster = {

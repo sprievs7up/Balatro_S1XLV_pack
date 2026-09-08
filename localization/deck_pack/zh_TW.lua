@@ -33,6 +33,7 @@ return {
                     "開局時，牌組有{C:clubs}#1#張梅花{}",
                     "和{C:diamonds}#1#張方塊{}",
                     "打出的牌會返回牌組",
+                    "每回合開始時有{C:red}#2#{}次棄牌",
                 },
             },
             b_cartomancer_grandmaster = {
