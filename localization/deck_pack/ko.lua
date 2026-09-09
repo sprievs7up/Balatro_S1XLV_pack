@@ -49,6 +49,12 @@ return {
                     "승리 앤티 {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    덱",
+                text = {
+                    "{C:inactive}아무 효과 없음?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

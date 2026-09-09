@@ -1,23 +1,20 @@
-# SIXLV BALATRO PACK
+# Balatro_The_Grand_Master
 
-![S1XLV BALATRO PACK](assets/readme_header.png)
+![BALATRO THE GRAND MASTER](assets/balatroGM2.png)
 
 [English](#english) | [简体中文](#简体中文)
 
 ## English
 
-**Current version:** `v0.1.8`
+**Current version:** `v0.1.9`
 
 SIXLV BALATRO PACK is a vanilla-style content and balance mod for *Balatro*.
 
-It adds five decks and two high-difficulty Stakes, while adjusting selected vanilla Jokers, Vouchers, and high-Stake rules. The goal is to preserve the feel of the base game while opening up more viable builds and alternative starting strategies.
+It adds new decks and two high-difficulty Stakes, while adjusting selected vanilla Jokers, Vouchers, and high-Stake rules. The goal is to preserve the feel of the base game while opening up more viable builds and alternative starting strategies.
 
 The mod is still being tested and refined. Current values are not final.
 
-## v0.1.8 Update
-
-- Adds the Grand Master Deck. Consumable slots can hold Jokers, a special Boss Blind appears every `4` Antes, and the run is won at Ante `12`.
-- Small Deck now starts with `2` discards per round instead of the default `3`.
+## v0.1.9 Update
 
 ---
 
@@ -204,18 +201,15 @@ Consumable slots can be used as Joker slots. Face a special Boss Blind every `4`
 
 ## 简体中文
 
-**当前版本：** `v0.1.8`
+**当前版本：** `v0.1.9`
 
 SIXLV BALATRO PACK 是一个以《Balatro》原版美术与玩法为基础的内容及平衡调整模组。
 
-模组新增五副牌组、两级高难度注，并调整部分原版小丑牌、优惠券与高难度规则，目标是在保留原版体验的同时提供更多可用构筑和不同的开局方式。
+模组新增牌组、两级高难度注，并调整部分原版小丑牌、优惠券与高难度规则，目标是在保留原版体验的同时提供更多可用构筑和不同的开局方式。
 
 当前版本仍在持续测试与调整，现有数值不代表最终版本。
 
-## v0.1.8 更新
-
-- 新增大师牌组：消耗牌栏位可作小丑牌栏位，每 `4` 个底注遭遇特殊的 Boss 盲注，通关底注 `+4`。
-- 小牌组的每回合初始弃牌次数由默认的 `3` 次降低至 `2` 次。
+## v0.1.9 更新
 
 ---
 

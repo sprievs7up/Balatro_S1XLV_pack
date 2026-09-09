@@ -11,6 +11,7 @@ local settings = {
         inferno = 'b_cartomancer_inferno',
         small = 'b_cartomancer_small',
         grandmaster = 'b_cartomancer_grandmaster',
+        blank = 'b_cartomancer_blank',
     },
     cartomancer = {
         shop_rates = {
@@ -98,6 +99,23 @@ local settings = {
         win_ante = 12,
         showdown_interval = 4,
     },
+    blank = {
+        starting_packs = 20,
+        pack_keys = {
+            'p_standard_mega_1',
+            'p_standard_mega_2',
+        },
+        playing_card_rate = 4,
+        standard_pack_discount_step = 25,
+        standard_pack_discount_cap = 50,
+        shop_pack_kinds = {
+            { kind = 'Standard', weight = 0.70 },
+            { kind = 'Buffoon', weight = 0.10 },
+            { kind = 'Celestial', weight = 0.10 },
+            { kind = 'Arcana', weight = 0.08 },
+            { kind = 'Spectral', weight = 0.02 },
+        },
+    },
     tarot = {
         enhanced_max_highlighted = {
             c_magician = 3,
@@ -173,6 +191,10 @@ local function is_grandmaster_run()
     return run_uses('grandmaster_deck', settings.keys.grandmaster)
 end
 
+local function is_blank_run()
+    return run_uses('blank_deck', settings.keys.blank)
+end
+
 local function small_recycle_enabled(modifier_key, default_value)
     if not is_small_run() then return false end
 
@@ -234,6 +256,7 @@ hook_state.is_cartomancer_run = is_cartomancer_run
 hook_state.is_inferno_run = is_inferno_run
 hook_state.is_small_run = is_small_run
 hook_state.is_grandmaster_run = is_grandmaster_run
+hook_state.is_blank_run = is_blank_run
 hook_state.small_recycle_enabled = small_recycle_enabled
 hook_state.small_recycle_seed = small_recycle_seed
 hook_state.shuffle_card_batch = shuffle_card_batch
@@ -255,13 +278,16 @@ local context = {
     is_inferno_run = is_inferno_run,
     is_small_run = is_small_run,
     is_grandmaster_run = is_grandmaster_run,
+    is_blank_run = is_blank_run,
 }
 
 local sections = {
     'modules/deck_pack/back_hooks.lua',
     'modules/deck_pack/decks.lua',
+    'modules/deck_pack/blank_start.lua',
     'modules/deck_pack/small_recycling.lua',
     'modules/deck_pack/cartomancer_rules.lua',
+    'modules/deck_pack/blank_rules.lua',
     'modules/deck_pack/grandmaster.lua',
 }
 

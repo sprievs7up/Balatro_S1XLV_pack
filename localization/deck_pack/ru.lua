@@ -52,6 +52,12 @@ return {
                     "Анте для победы {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    колода",
+                text = {
+                    "{C:inactive}Ничего не делает?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

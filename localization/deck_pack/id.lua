@@ -52,6 +52,12 @@ return {
                     "Ante kemenangan {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    Deck",
+                text = {
+                    "{C:inactive}Tidak apa-apa?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

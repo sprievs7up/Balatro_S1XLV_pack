@@ -52,6 +52,12 @@ return {
                     "Ante zwycięstwa {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    Talia",
+                text = {
+                    "{C:inactive}Nie robi nic?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

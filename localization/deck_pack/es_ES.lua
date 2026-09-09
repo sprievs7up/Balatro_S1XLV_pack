@@ -51,6 +51,12 @@ return {
                     "Apuesta para ganar {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "Baraja    ",
+                text = {
+                    "{C:inactive}¿No hace nada?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

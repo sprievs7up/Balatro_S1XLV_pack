@@ -64,12 +64,14 @@ Steamodded objects; those registrations are not global hooks.
 
 ## S1XLV Deck Pack
 
-The Deck Pack is split into five files:
+The Deck Pack is split into seven files:
 
 - modules/deck_pack/back_hooks.lua
 - modules/deck_pack/decks.lua
+- modules/deck_pack/blank_start.lua
 - modules/deck_pack/small_recycling.lua
 - modules/deck_pack/cartomancer_rules.lua
+- modules/deck_pack/blank_rules.lua
 - modules/deck_pack/grandmaster.lua
 
 ### Back and Inferno hooks
@@ -80,7 +82,7 @@ The Deck Pack is split into five files:
 | Back:change_to | Updates or clears those atlas fields while browsing between deck backs. | Calls the original change function first. |
 | Back:load | Restores the contrast-specific atlas fields after a saved run is loaded. | Calls the original load function first. |
 | create_card | Gives Inferno shop Jokers, Buffoon Pack choices, and Judgement a 60/25/15 Common/Uncommon/Rare split. | Explicit cards or rarities, Legendary rolls, other generation sources, and other decks delegate unchanged. |
-| Game:start_run | Installs the Inferno score wrapper against the final get_blind_amount chain for the new run. | Delegates the run startup unchanged. |
+| Game:start_run | Installs the Inferno score wrapper against the final get_blind_amount chain, reapplies Blank Deck shop rules to loaded runs, then immediately opens the first Blank Deck pack after all run card areas exist and before Blind Select is drawn. | Delegates the run startup unchanged. |
 | Dynamic get_blind_amount wrapper | Applies Inferno's fixed Ante 10 base score for the active Stake scaling tier. | Delegates every other Ante and every non-Inferno run. |
 
 ### Small Deck hooks
@@ -90,6 +92,19 @@ The Deck Pack is split into five files:
 | G.FUNCS.draw_from_play_to_discard | After all scoring/destruction callbacks, shuffles surviving played cards and inserts them at the bottom of the Small Deck. | Delegates for every other deck or when recycling is disabled. |
 | G.FUNCS.discard_cards_from_highlighted | Records the exact discarded card IDs for the optional discard-recycling path. This path is currently disabled by the deck modifier. | With the modifier disabled, it only delegates. |
 | G.FUNCS.draw_from_deck_to_hand | If optional discard recycling is enabled later, moves the recorded survivors before replacement-card draw size is calculated. | Current gameplay delegates to the original draw. |
+
+### Blank Deck hooks
+
+| Hook | Purpose | Normal fallback |
+| --- | --- | --- |
+| Game:update | Opens the next randomly selected Mega Standard Pack variant whenever pack cleanup returns to `BLIND_SELECT`, then releases vanilla to create the Blind Select UI after pack `20`. | Calls the original update first and does nothing outside a Blank Deck starting draft. |
+| create_UIBox_standard_pack | Removes the **Skip** button from only the `20` generated Blank Deck starting packs. | Later packs in the same run and every other deck keep the original Standard Pack UI. |
+| G.FUNCS.skip_booster | Blocks controller shortcuts or another mod from bypassing the mandatory starting-pack choices. | Delegates after the starting draft and for every other pack. |
+| G.FUNCS.end_consumeable | Counts one completed starting Mega Standard Pack and records the final drafted deck size after all `20` are resolved. | Delegates every non-starting pack unchanged. |
+| G.FUNCS.select_blind / skip_blind | Prevents a zero-card Blank Deck from advancing a Blind before its starting draft is complete. | Delegates after the draft and for every other deck. |
+| get_pack | Chooses generic shop Booster Pack kinds at `70%` Standard, `10%` Buffoon, `10%` Celestial, `8%` Arcana, and `2%` Spectral, including the first shop. | Explicitly requested pack kinds and every non-Blank run delegate unchanged. |
+| Card:set_cost | Prices Blank Deck Standard Packs one discount tier ahead: `25%` before Clearance Sale, `50%` after it, and still `50%` after Liquidation. | Other packs, shop items, and non-Blank runs use the upstream price calculation unchanged. |
+| Blank Back calculate | Returns Steamodded's `remove` flag for non-debuffed scoring cards in `G.play`; Steamodded then shatters Glass Cards and dissolves all other scored cards. | Unscored played cards, held cards, debuffed cards, and every other deck are unaffected. |
 
 ### Cartomancer hooks
 

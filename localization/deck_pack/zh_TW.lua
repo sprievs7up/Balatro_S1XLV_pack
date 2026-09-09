@@ -44,6 +44,12 @@ return {
                     "通關底注{C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    牌組",
+                text = {
+                    "{C:inactive}有作用嗎？",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

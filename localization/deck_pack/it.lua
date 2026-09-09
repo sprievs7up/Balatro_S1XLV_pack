@@ -51,6 +51,12 @@ return {
                     "Ante per vincere {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "Mazzo    ",
+                text = {
+                    "{C:inactive}Non fa nulla?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

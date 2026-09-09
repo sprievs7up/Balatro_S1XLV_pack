@@ -159,12 +159,21 @@ return function(context)
 
     -- Hook: Game:start_run
     -- Rebuild the Inferno score wrapper against the current hook chain at the
-    -- start of each run; all non-Inferno calls continue to delegate unchanged.
+    -- start of each run. Once vanilla has constructed the run card areas, the
+    -- Blank Deck immediately opens its first pack before Blind Select is drawn
+    -- and reapplies its shop rules when an existing run is loaded.
     if not hooks.originals.game_start_run then
         hooks.originals.game_start_run = Game.start_run
         function Game:start_run(args)
             hooks.install_inferno_blind_amount_hook()
-            return hooks.originals.game_start_run(self, args)
+            local result = hooks.originals.game_start_run(self, args)
+            if hooks.apply_blank_run_rules then
+                hooks.apply_blank_run_rules()
+            end
+            if hooks.prepare_blank_starting_packs then
+                hooks.prepare_blank_starting_packs()
+            end
+            return result
         end
     end
 end

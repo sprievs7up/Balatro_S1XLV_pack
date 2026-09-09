@@ -49,6 +49,12 @@ return {
                     "勝利アンティ {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    デッキ",
+                text = {
+                    "{C:inactive}何もしない？",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

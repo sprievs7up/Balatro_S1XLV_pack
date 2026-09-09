@@ -6,6 +6,7 @@ return function(context)
     local inferno = settings.inferno
     local small = settings.small
     local grandmaster = settings.grandmaster
+    local blank = settings.blank
 
     local function register_back_atlas(key, path)
         SMODS.Atlas {
@@ -22,6 +23,7 @@ return function(context)
     register_back_atlas('small_back_hc', 'small_back_hc.png')
     register_back_atlas('inferno_back', 'inferno_back.png')
     register_back_atlas('grandmaster_back', 'grandmaster_back.png')
+    register_back_atlas('empty_back', 'empty_back.png')
 
     SMODS.Back {
         key = 'deck',
@@ -262,6 +264,37 @@ return function(context)
             G.GAME.modifiers = G.GAME.modifiers or {}
             G.GAME.modifiers.grandmaster_deck = true
             G.GAME.win_ante = grandmaster.win_ante
+        end,
+    }
+
+    SMODS.Back {
+        key = 'blank',
+        atlas = 'empty_back',
+        pos = { x = 0, y = 0 },
+        unlocked = true,
+        config = {},
+        initial_deck = {
+            ranks = {},
+        },
+        loc_vars = function()
+            return { vars = {} }
+        end,
+        apply = function()
+            G.GAME.modifiers = G.GAME.modifiers or {}
+            G.GAME.modifiers.blank_deck = true
+            G.GAME.blank_starting_packs_remaining = blank.starting_packs
+            G.GAME.blank_starting_pack_active = false
+            G.GAME.blank_starting_packs_complete = false
+            G.GAME.blank_starting_blind_pending = false
+            if hooks.apply_blank_run_rules then
+                hooks.apply_blank_run_rules()
+            end
+        end,
+        calculate = function(_, _, context_args)
+            if hooks.blank_should_destroy_scoring_card
+                and hooks.blank_should_destroy_scoring_card(context_args) then
+                return { remove = true }
+            end
         end,
     }
 

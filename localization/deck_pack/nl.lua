@@ -52,6 +52,12 @@ return {
                     "Winnende ante {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    kaartspel",
+                text = {
+                    "{C:inactive}Doet niets?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

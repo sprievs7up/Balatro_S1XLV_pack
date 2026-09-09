@@ -49,6 +49,12 @@ return {
                     "Win Ante {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "    Deck",
+                text = {
+                    "{C:inactive}Does nothing?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {

@@ -52,6 +52,12 @@ return {
                     "Mise de victoire {C:red}+#1#{}",
                 },
             },
+            b_cartomancer_blank = {
+                name = "Jeu    ",
+                text = {
+                    "{C:inactive}Ne fait rien ?",
+                },
+            },
         },
         Tarot = {
             c_cartomancer_high_priestess = {
