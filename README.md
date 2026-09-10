@@ -88,6 +88,7 @@ The mod is still being tested and refined. Current values are not final.
 Australium Stake is added after Gold Stake. Compatible Jokers in the shop have a `30%` chance to receive the Bulky sticker.
 
 - Uses two Joker slots.
+- Both its purchase price and sell value are doubled.
 - Compatible effects trigger one additional time.
 - Some retrigger, utility, and Legendary Jokers cannot receive Bulky.
 
@@ -283,6 +284,7 @@ Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础
 在金注之后加入澳金注。商店中的兼容小丑有 `30%` 概率获得“肥大”标签。
 
 - 占据两个小丑栏位。
+- 购买价格和出售价格均翻倍。
 - 兼容的效果会额外触发一次。
 - 部分复用类、特殊功能类和传奇小丑不会获得肥大。
 

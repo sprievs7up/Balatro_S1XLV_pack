@@ -5,6 +5,7 @@ return {
                 name = "Besar",
                 text = {
                     "Memakai {C:attention}2{} slot, tetapi menggandakan efeknya",
+                    "Harga beli dan jual menjadi {C:money}dua kali lipat{}",
                 },
             },
             bsk_australium_sticker = {

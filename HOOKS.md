@@ -43,7 +43,7 @@ All hooks in this section are installed once through BSK.hooks_installed.
 | Hook | Purpose | Normal fallback |
 | --- | --- | --- |
 | Card:calculate_joker | Tracks Invisible Joker's copy source and converts a Bulky XMult retrigger to a linear X2 pass. | Non-Bulky results and the upstream triggered flag are returned unchanged. |
-| Card:set_cost | Doubles the purchase price of a Bulky Joker after vanilla/modded cost calculation. | Non-Bulky cards retain the upstream cost. |
+| Card:set_cost | Doubles both the purchase price and the already-calculated sell value of a Bulky Joker, then refreshes its sell-price label. | Non-Bulky cards retain the upstream prices. |
 | Card:add_to_deck | Applies the second copy of supported passive effects when a Bulky Joker first enters the deck. | Delegates before testing the final added state. |
 | Card:remove_from_deck | Removes that extra passive contribution when a Bulky Joker leaves. | Delegates before testing the final removed state. |
 | Card:calculate_dollar_bonus | Doubles end-of-round cash Joker payouts that do not pass through normal retrigger scoring. | Returns the original payout for non-Bulky cards. |
@@ -102,6 +102,8 @@ The Deck Pack is split into seven files:
 | G.FUNCS.skip_booster | Blocks controller shortcuts or another mod from bypassing the mandatory starting-pack choices. | Delegates after the starting draft and for every other pack. |
 | G.FUNCS.end_consumeable | Counts one completed starting Mega Standard Pack and records the final drafted deck size after all `20` are resolved. | Delegates every non-starting pack unchanged. |
 | G.FUNCS.select_blind / skip_blind | Prevents a zero-card Blank Deck from advancing a Blind before its starting draft is complete. | Delegates after the draft and for every other deck. |
+| SMODS.poll_seal | Changes only the `100` cards offered by the `20` starting Mega Standard Packs from the normal `20%` Seal rate to independent `5%` rolls; also removes Blue from natural Cartomancer rolls. | Only the exact starting-draft Standard Pack call is intercepted; later Standard Packs retain their original `{mod = 10}` roll. |
+| SMODS.create_card | Rerolls Base/Enhanced status for only those `100` starting-pack cards at `15%` Enhanced per card. | Later Standard Packs and all non-Standard creation delegate unchanged. |
 | get_pack | Chooses generic shop Booster Pack kinds at `70%` Standard, `10%` Buffoon, `10%` Celestial, `8%` Arcana, and `2%` Spectral, including the first shop. | Explicitly requested pack kinds and every non-Blank run delegate unchanged. |
 | Card:set_cost | Prices Blank Deck Standard Packs one discount tier ahead: `25%` before Clearance Sale, `50%` after it, and still `50%` after Liquidation. | Other packs, shop items, and non-Blank runs use the upstream price calculation unchanged. |
 | Blank Back calculate | Returns Steamodded's `remove` flag for non-debuffed scoring cards in `G.play`; Steamodded then shatters Glass Cards and dissolves all other scored cards. | Unscored played cards, held cards, debuffed cards, and every other deck are unaffected. |

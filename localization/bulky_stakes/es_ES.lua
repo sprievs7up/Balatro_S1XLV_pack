@@ -5,6 +5,7 @@ return {
                 name = "Voluminoso",
                 text = {
                     "Ocupa {C:attention}2{} espacios, pero duplica su efecto",
+                    "Los precios de compra y venta se {C:money}duplican{}",
                 },
             },
             bsk_australium_sticker = {

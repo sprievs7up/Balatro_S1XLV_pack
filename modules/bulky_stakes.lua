@@ -521,6 +521,8 @@ if not BSK.hooks_installed then
         BSK.card_set_cost(self)
         if has_bulky(self) then
             self.cost = (self.cost or 0) * 2
+            self.sell_cost = (self.sell_cost or 0) * 2
+            self.sell_cost_label = self.facing == 'back' and '?' or self.sell_cost
         end
     end
 

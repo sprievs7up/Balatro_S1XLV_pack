@@ -5,6 +5,7 @@ return {
                 name = "肥大",
                 text = {
                     "占据{C:attention}2{}个栏位，但效果{C:attention}翻倍{}",
+                    "购买和出售价格均{C:money}翻倍{}",
                 },
             },
             bsk_australium_sticker = {

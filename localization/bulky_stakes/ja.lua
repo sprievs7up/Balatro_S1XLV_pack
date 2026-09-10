@@ -5,6 +5,7 @@ return {
                 name = "大型",
                 text = {
                     "{C:attention}2{}枠を使うが、効果が2倍になる",
+                    "購入価格と売却価格が{C:money}2倍{}になる",
                 },
             },
             bsk_australium_sticker = {

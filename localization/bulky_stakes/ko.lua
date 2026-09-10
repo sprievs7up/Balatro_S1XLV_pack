@@ -5,6 +5,7 @@ return {
                 name = "비대",
                 text = {
                     "슬롯 {C:attention}2{}개를 차지하지만 효과가 두 배가 됩니다",
+                    "구매 및 판매 가격이 {C:money}두 배{}가 됩니다",
                 },
             },
             bsk_australium_sticker = {

@@ -5,6 +5,7 @@ return {
                 name = "Bulky",
                 text = {
                     "Uses {C:attention}2{} slots, but doubles its effect",
+                    "Purchase and sell prices are {C:money}doubled{}",
                 },
             },
             bsk_australium_sticker = {

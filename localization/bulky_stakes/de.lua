@@ -5,6 +5,7 @@ return {
                 name = "Sperrig",
                 text = {
                     "Belegt {C:attention}2{} Plätze, verdoppelt aber den Effekt",
+                    "Kauf- und Verkaufspreis sind {C:money}verdoppelt{}",
                 },
             },
             bsk_australium_sticker = {

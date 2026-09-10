@@ -5,6 +5,7 @@ return {
                 name = "Log",
                 text = {
                     "Gebruikt {C:attention}2{} plaatsen, maar verdubbelt het effect",
+                    "Koop- en verkoopprijs worden {C:money}verdubbeld{}",
                 },
             },
             bsk_australium_sticker = {

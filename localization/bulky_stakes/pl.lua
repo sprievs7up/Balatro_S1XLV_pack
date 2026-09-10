@@ -5,6 +5,7 @@ return {
                 name = "Masywny",
                 text = {
                     "Zajmuje {C:attention}2{} miejsca, ale podwaja swój efekt",
+                    "Cena kupna i sprzedaży jest {C:money}podwojona{}",
                 },
             },
             bsk_australium_sticker = {

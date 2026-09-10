@@ -101,6 +101,8 @@ local settings = {
     },
     blank = {
         starting_packs = 20,
+        starting_seal_mod = 2.5,
+        starting_enhanced_chance = 0.15,
         pack_keys = {
             'p_standard_mega_1',
             'p_standard_mega_2',

@@ -12,6 +12,76 @@ return function(context)
         return math.max(0, math.floor(remaining))
     end
 
+    local function blank_starting_pack_is_active()
+        return G
+            and G.GAME
+            and is_blank_run()
+            and remaining_starting_packs() > 0
+            and G.GAME.blank_starting_pack_active == true
+            or false
+    end
+    hooks.blank_starting_pack_is_active = blank_starting_pack_is_active
+
+    -- Hook the final Steamodded Standard Pack entry point rather than the
+    -- vanilla source text that Steamodded replaces during preflight. Its
+    -- built-in Standard boosters call SMODS.poll_seal({mod = 10}) once for
+    -- every offered card. During the starting draft only, mod 2.5 changes the
+    -- vanilla/Steamodded 20% occurrence rate to an independent 5% roll.
+    if SMODS and SMODS.poll_seal
+        and not hooks.originals.blank_poll_seal then
+        hooks.originals.blank_poll_seal = SMODS.poll_seal
+        function SMODS.poll_seal(args)
+            local standard_args = args or {}
+            local is_standard_pack_roll = standard_args.mod == 10
+                and standard_args.guaranteed ~= true
+                and (standard_args.key == nil
+                    or standard_args.key == 'stdseal')
+            if is_standard_pack_roll
+                and hooks.blank_starting_pack_is_active() then
+                local limited_args = {}
+                for key, value in pairs(standard_args) do
+                    limited_args[key] = value
+                end
+                limited_args.mod = blank.starting_seal_mod
+                return hooks.originals.blank_poll_seal(limited_args)
+            end
+            return hooks.originals.blank_poll_seal(args)
+        end
+    end
+
+    -- Steamodded's owned Standard boosters pass their chosen Base/Enhanced
+    -- set through SMODS.create_card. Reroll only those five cards while a
+    -- generated starting pack is active, giving each an independent 15%
+    -- chance to be Enhanced. Later Standard Packs delegate unchanged.
+    if SMODS and SMODS.create_card
+        and not hooks.originals.blank_smods_create_card then
+        hooks.originals.blank_smods_create_card = SMODS.create_card
+        function SMODS.create_card(args)
+            local is_starting_standard_card =
+                hooks.blank_starting_pack_is_active()
+                and type(args) == 'table'
+                and args.area == G.pack_cards
+                and args.key_append == 'sta'
+                and (args.set == 'Base' or args.set == 'Enhanced')
+            if is_starting_standard_card then
+                local limited_args = {}
+                for key, value in pairs(args) do
+                    limited_args[key] = value
+                end
+                local ante = G.GAME.round_resets
+                    and G.GAME.round_resets.ante
+                    or 0
+                limited_args.set = pseudorandom(pseudoseed(
+                    'blank_starting_enhanced' .. ante
+                )) < blank.starting_enhanced_chance
+                    and 'Enhanced'
+                    or 'Base'
+                return hooks.originals.blank_smods_create_card(limited_args)
+            end
+            return hooks.originals.blank_smods_create_card(args)
+        end
+    end
+
     local function finish_blank_starting_packs()
         G.GAME.blank_starting_packs_remaining = 0
         G.GAME.blank_starting_pack_active = false
@@ -136,9 +206,7 @@ return function(context)
         restore_blank_blind_select_after_draft
 
     local function blank_starting_pack_is_unskippable()
-        return is_blank_run()
-            and remaining_starting_packs() > 0
-            and G.GAME.blank_starting_pack_active == true
+        return hooks.blank_starting_pack_is_active()
     end
     hooks.blank_starting_pack_is_unskippable =
         blank_starting_pack_is_unskippable

@@ -5,6 +5,7 @@ return {
                 name = "Ingombrante",
                 text = {
                     "Occupa {C:attention}2{} spazi, ma raddoppia il suo effetto",
+                    "I prezzi di acquisto e vendita sono {C:money}raddoppiati{}",
                 },
             },
             bsk_australium_sticker = {
