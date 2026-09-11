@@ -23,10 +23,9 @@ return function(context)
     hooks.blank_starting_pack_is_active = blank_starting_pack_is_active
 
     -- Hook the final Steamodded Standard Pack entry point rather than the
-    -- vanilla source text that Steamodded replaces during preflight. Its
-    -- built-in Standard boosters call SMODS.poll_seal({mod = 10}) once for
-    -- every offered card. During the starting draft only, mod 2.5 changes the
-    -- vanilla/Steamodded 20% occurrence rate to an independent 5% roll.
+    -- vanilla source text that Steamodded replaces during preflight. Give each
+    -- starting-draft card an independent 2% Seal roll, then ask the upstream
+    -- function only to choose the Seal type when that roll succeeds.
     if SMODS and SMODS.poll_seal
         and not hooks.originals.blank_poll_seal then
         hooks.originals.blank_poll_seal = SMODS.poll_seal
@@ -38,22 +37,32 @@ return function(context)
                     or standard_args.key == 'stdseal')
             if is_standard_pack_roll
                 and hooks.blank_starting_pack_is_active() then
+                local ante = G.GAME.round_resets
+                    and G.GAME.round_resets.ante
+                    or 0
+                local has_seal = pseudorandom(pseudoseed(
+                    'blank_starting_seal' .. ante
+                )) < blank.starting_seal_chance
+                if not has_seal then return nil end
+
                 local limited_args = {}
                 for key, value in pairs(standard_args) do
                     limited_args[key] = value
                 end
-                limited_args.mod = blank.starting_seal_mod
+                limited_args.mod = 1
+                limited_args.guaranteed = true
                 return hooks.originals.blank_poll_seal(limited_args)
             end
             return hooks.originals.blank_poll_seal(args)
         end
     end
 
-    -- Steamodded's owned Standard boosters pass their chosen Base/Enhanced
-    -- set through SMODS.create_card. Reroll only those five cards while a
-    -- generated starting pack is active, giving each an independent 15%
-    -- chance to be Enhanced. Later Standard Packs delegate unchanged.
-    if SMODS and SMODS.create_card
+    -- Steamodded's owned Standard boosters pass Base/Enhanced, Edition, and
+    -- Seal results through SMODS.create_card. Reroll Base/Enhanced at 10% and
+    -- Edition occurrence at 5% for only the 100 starting-draft offers. The
+    -- upstream guaranteed Edition roll retains the normal Foil/Holographic/
+    -- Polychrome mix; Negative remains excluded as in Standard Packs.
+    if SMODS and SMODS.create_card and SMODS.poll_edition
         and not hooks.originals.blank_smods_create_card then
         hooks.originals.blank_smods_create_card = SMODS.create_card
         function SMODS.create_card(args)
@@ -76,6 +85,20 @@ return function(context)
                 )) < blank.starting_enhanced_chance
                     and 'Enhanced'
                     or 'Base'
+
+                local has_edition = pseudorandom(pseudoseed(
+                    'blank_starting_edition' .. ante
+                )) < blank.starting_edition_chance
+                limited_args.edition = nil
+                limited_args.no_edition = true
+                if has_edition then
+                    limited_args.edition = SMODS.poll_edition {
+                        key = 'blank_starting_edition_type' .. ante,
+                        no_negative = true,
+                        guaranteed = true,
+                    }
+                    limited_args.no_edition = nil
+                end
                 return hooks.originals.blank_smods_create_card(limited_args)
             end
             return hooks.originals.blank_smods_create_card(args)
