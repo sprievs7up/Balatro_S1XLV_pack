@@ -51,6 +51,13 @@ return {
                     "Kartu skor dengan {C:attention}4{} jenis memberi {X:mult,C:white}X#3#{} Mult",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Setiap jenis kartu {C:planet}Planet{} yang digunakan dalam permainan ini",
+                    "memberi {C:money}$1{} di akhir babak",
+                    "Dapat ditumpuk {C:inactive}(Saat ini {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Dapatkan tambahan {C:money}$#1#{} {C:attention}bunga{}",

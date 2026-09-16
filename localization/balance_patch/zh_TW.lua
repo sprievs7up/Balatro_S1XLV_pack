@@ -49,6 +49,13 @@ return {
                     "計分牌有{C:attention}4{}種花色時，倍數{X:mult,C:white}X#3#{}",
                 },
             },
+            j_satellite = {
+                text = {
+                    "本賽局每使用過一種{C:planet}行星牌{}",
+                    "每回合結束時可得到{C:money}$1{}",
+                    "可疊加{C:inactive}（目前為{C:money}$#1#{C:inactive}）",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "每回合結束時，每擁有{C:money}$#2#{}",

@@ -50,6 +50,13 @@ return {
                     "得分牌有{C:attention}4{}种花色时{X:mult,C:white}X#3#{}倍率",
                 },
             },
+            j_satellite = {
+                text = {
+                    "本赛局每使用过一种{C:planet}星球牌{}",
+                    "每回合结束时可得到{C:money}$1{}",
+                    "可叠加{C:inactive}（当前{C:money}$#1#{C:inactive}）",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "回合结束时，每持有{C:money}$#2#{}",

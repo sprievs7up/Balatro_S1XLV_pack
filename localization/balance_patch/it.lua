@@ -50,6 +50,13 @@ return {
                     "Le carte a punti di {C:attention}4{} semi danno {X:mult,C:white}X#3#{} molt.",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Ogni carta {C:planet}Pianeta{} diversa usata in questa partita",
+                    "dà {C:money}$1{} a fine round",
+                    "Cumulabile {C:inactive}(Attualmente {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Ottieni {C:money}$#1#{} di {C:attention}interessi{} extra",

@@ -6,7 +6,7 @@
 
 ## English
 
-**Current version:** `v0.1.9`
+**Current version:** `v0.1.11`
 
 Balatro The Grand Master is a vanilla-style content and balance mod for *Balatro*.
 
@@ -14,7 +14,10 @@ It adds new decks and two high-difficulty Stakes, while adjusting selected vanil
 
 The mod is still being tested and refined. Current values are not final.
 
-## v0.1.9 Update
+## v0.1.11 Update
+
+- Recoloured the main-menu vortex with a coral-red centre and light-blue outer palette while retaining its original white highlights and motion.
+- Added `8x`, `16x`, and `256x` choices to the Game Speed setting. The original `0.5x`, `1x`, `2x`, and `4x` choices remain available.
 
 ---
 
@@ -47,7 +50,6 @@ The mod is still being tested and refined. Current values are not final.
 | ![Loyalty Card](assets/readme/1x/jokers/loyalty_card.png) | Loyalty Card | Rarity changed from Uncommon to Common. |
 | ![Matador](assets/readme/1x/jokers/matador.png) | Matador | Rare, costs `$8`, and gives `$8` per trigger. |
 | ![Superposition](assets/readme/1x/jokers/superposition.png) | Superposition | Now Rare and costs `$10`; a Straight containing an Ace creates a Negative copy of the last Tarot or Planet card used. |
-| ![Red Card](assets/readme/1x/jokers/red_card.png) | Red Card | Skipping a Booster Pack now adds `+4` Mult instead of `+3`. |
 | ![Square Joker](assets/readme/1x/jokers/square_joker.png) | Square Joker | Starts with `+16` Chips and continues to gain `+4` Chips per qualifying hand. |
 | ![Stone Joker](assets/readme/1x/jokers/stone_joker.png) | Stone Joker | Each Stone Card in the full deck now gives `+50` Chips instead of `+25`. |
 | ![Throwback](assets/readme/1x/jokers/throwback.png) | Throwback | Gains `X0.5` Mult per Blind skipped this run instead of `X0.25`. |
@@ -55,7 +57,7 @@ The mod is still being tested and refined. Current values are not final.
 | ![Hit the Road](assets/readme/1x/jokers/hit_the_road.png) | Hit the Road | Gains `X0.75` Mult per discarded Jack instead of `X0.5`. |
 | ![The Family](assets/readme/1x/jokers/the_family.png) | The Family | Four of a Kind now gives `X5` Mult instead of `X4`. |
 | ![The Tribe](assets/readme/1x/jokers/the_tribe.png) | The Tribe | A Flush now gives `X2.5` Mult instead of `X2`. |
-| ![Satellite](assets/readme/1x/jokers/satellite.png) | Satellite | Gives `$2` at the end of the round for each unique Planet card used this run instead of `$1`. |
+| ![Satellite](assets/readme/1x/jokers/satellite.png) | Satellite | Each layered Planet upgrade stacks `$1` of end-of-round payout. |
 | ![Bootstraps](assets/readme/1x/jokers/bootstraps.png) | Bootstraps | Gives `+3` Mult per `$5` held instead of `+2`. |
 | ![Golden Ticket](assets/readme/1x/jokers/golden_ticket.png) | Golden Ticket | Each played Gold Card that scores gives `$5`. |
 | ![To the Moon](assets/readme/1x/jokers/to_the_moon.png) | To the Moon | On Gold Stake, gives an additional `$2` of interest for every `$10` held. |
@@ -202,7 +204,7 @@ Consumable slots can be used as Joker slots. Face a special Boss Blind every `4`
 
 ## 简体中文
 
-**当前版本：** `v0.1.9`
+**当前版本：** `v0.1.11`
 
 Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础的内容及平衡调整模组。
 
@@ -210,7 +212,10 @@ Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础
 
 当前版本仍在持续测试与调整，现有数值不代表最终版本。
 
-## v0.1.9 更新
+## v0.1.11 更新
+
+- 将主界面漩涡改为珊瑚红色中心与浅蓝色外圈，同时保留原有的白色高光细节与动态效果。
+- 在“游戏速度”设置中新增 `8×`、`16×` 与 `256×`，并保留原有的 `0.5×`、`1×`、`2×` 与 `4×`。
 
 ---
 
@@ -243,7 +248,6 @@ Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础
 | ![积分卡](assets/readme/1x/jokers/loyalty_card.png) | 积分卡 | 品质由罕见改为普通。 |
 | ![斗牛士](assets/readme/1x/jokers/matador.png) | 斗牛士 | 稀有品质，售价 `$8`，每次触发获得 `$8`。 |
 | ![叠加态](assets/readme/1x/jokers/superposition.png) | 叠加态 | 改为稀有品质、售价 `$10`；带 A 的顺子会生成上一次使用的塔罗牌或星球牌的负片版本。 |
-| ![红牌](assets/readme/1x/jokers/red_card.png) | 红牌 | 每跳过一个补充包，由 `+3` 提高至 `+4` 倍率。 |
 | ![方形小丑](assets/readme/1x/jokers/square_joker.png) | 方形小丑 | 初始获得 `+16` 筹码，之后每次成长 `+4` 筹码。 |
 | ![石头小丑](assets/readme/1x/jokers/stone_joker.png) | 石头小丑 | 完整牌组中每张石头牌提供的筹码由 `+25` 提高至 `+50`。 |
 | ![回溯](assets/readme/1x/jokers/throwback.png) | 回溯 | 本赛局每跳过一个盲注的成长由 `X0.25` 提高至 `X0.5`。 |
@@ -251,7 +255,7 @@ Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础
 | ![上路吧杰克](assets/readme/1x/jokers/hit_the_road.png) | 上路吧杰克 | 每弃掉一张 J 的成长由 `X0.5` 提高至 `X0.75`。 |
 | ![一家人](assets/readme/1x/jokers/the_family.png) | 一家人 | 四条牌型提供的倍率由 `X4` 提高至 `X5`。 |
 | ![部落](assets/readme/1x/jokers/the_tribe.png) | 部落 | 同花牌型提供的倍率由 `X2` 提高至 `X2.5`。 |
-| ![卫星](assets/readme/1x/jokers/satellite.png) | 卫星 | 本赛局每使用过一种不同的星球牌，回合结束收益由 `$1` 提高至 `$2`。 |
+| ![卫星](assets/readme/1x/jokers/satellite.png) | 卫星 | 每次逐层生效的星球牌升级可叠加 `$1` 回合结束收益。 |
 | ![提靴带](assets/readme/1x/jokers/bootstraps.png) | 提靴带 | 每持有 `$5`，由 `+2` 提高至 `+3` 倍率。 |
 | ![黄金门票](assets/readme/1x/jokers/golden_ticket.png) | 黄金门票 | 每张打出并计分的黄金牌获得 `$5`。 |
 | ![冲向月球](assets/readme/1x/jokers/to_the_moon.png) | 冲向月球 | 金注下每持有 `$10`，额外获得 `$2` 利息。 |

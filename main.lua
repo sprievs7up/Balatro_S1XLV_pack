@@ -19,6 +19,7 @@ SMODS.Atlas {
 }
 
 local components = {
+    { name = 'Main Menu Theme', prefix = 'sixlv', path = 'modules/menu_theme.lua' },
     { name = 'Balatro Balance Patch', prefix = 'bbp', path = 'modules/balance_patch.lua' },
     { name = 'Bulky Stakes', prefix = 'bsk', path = 'modules/bulky_stakes.lua' },
     { name = 'S1XLV Deck Pack', prefix = 'cartomancer', path = 'modules/deck_pack.lua' },

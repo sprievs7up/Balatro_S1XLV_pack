@@ -50,6 +50,13 @@ return {
                     "Las cartas que puntúan con {C:attention}4{} palos dan {X:mult,C:white}X#3#{} multi",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Cada carta de {C:planet}planeta{} distinta usada en esta partida",
+                    "otorga {C:money}$1{} al final de la ronda",
+                    "Acumulable {C:inactive}(Actual {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Gana {C:money}$#1#{} extra de {C:attention}interés{}",

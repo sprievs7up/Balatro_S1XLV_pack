@@ -50,6 +50,13 @@ return {
                     "점수 카드가 {C:attention}4{}개 수트면 {X:mult,C:white}X#3#{} 배수",
                 },
             },
+            j_satellite = {
+                text = {
+                    "이번 런에서 사용한 {C:planet}행성 카드{} 종류마다",
+                    "라운드 종료 시 {C:money}$1{} 획득",
+                    "중첩 가능 {C:inactive}(현재 {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "라운드 종료 시 보유한 {C:money}$#2#{}마다",

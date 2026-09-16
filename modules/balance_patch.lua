@@ -608,11 +608,6 @@ take_joker('superposition', {
     end,
 })
 
--- Red Card
-take_joker('red_card', {
-    config = { extra = 4, mult = 0 },
-})
-
 -- Square Joker
 take_joker('square', {
     config = { extra = { chips = 16, chip_mod = 4 } },
@@ -668,9 +663,12 @@ take_joker('tribe', {
 })
 
 -- Satellite
-take_joker('satellite', {
-    config = { extra = 2 },
-})
+local satellite_chunk, satellite_error = SMODS.load_file(
+    'modules/balance_patch/satellite.lua'
+)
+assert(satellite_chunk, ('[Balatro Balance Patch] Could not load Satellite: %s')
+    :format(tostring(satellite_error)))
+satellite_chunk().register(take_joker)
 
 -- Bootstraps
 take_joker('bootstraps', {

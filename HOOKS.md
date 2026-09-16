@@ -6,7 +6,7 @@ player-facing rules remain in README.md.
 
 ## Hook rules
 
-- main.lua loads Balance Patch, Bulky Stakes, then the Deck Pack.
+- main.lua loads the Main Menu Theme, Balance Patch, Bulky Stakes, then the Deck Pack.
 - A wrapper always keeps the function that existed immediately before it was
   installed and delegates to that function outside its own condition.
 - Deck Pack wrappers share the historical
@@ -17,10 +17,20 @@ player-facing rules remain in README.md.
 - Steamodded take_ownership calls are listed separately. They replace center
   callbacks rather than global functions.
 
+## Main Menu Theme
+
+The theme stores its wrapper state in `__sixlv_menu_theme_hook_state` so a
+Steamodded hot reload cannot wrap the menu twice.
+
+| Hook | Purpose | Normal fallback |
+| --- | --- | --- |
+| Game:main_menu | After the menu is created, replaces only the vanilla splash shader's `colour_1` and `colour_2` inputs with `#E56B6F` and `#60C2FF`. The shader, white highlights, transition flash, timing, and reduced-motion behaviour remain vanilla. | Calls the original menu function first and returns its result. |
+
 ## Balatro Balance Patch
 
 These hooks extend Matador so Boss Blind effects that occur outside the normal
-scoring contexts can still trigger it.
+scoring contexts can still trigger it. They also maintain Satellite's
+run-persistent Planet-upgrade layers.
 
 | Hook | Purpose | Normal fallback |
 | --- | --- | --- |
@@ -31,10 +41,14 @@ scoring contexts can still trigger it.
 | G.FUNCS.discard_cards_from_highlighted | Detects cards discarded by The Hook and emits one Matador context. | Preserves the original discard return value. |
 | Blind:press_play | Counts the highlighted cards selected for The Tooth before their queued move into the play area. | Returns the original press_play result. |
 | ease_dollars | Emits The Tooth's Matador context after the final non-instant $1 deduction. | Returns the original money result for every call. |
+| set_consumeable_usage | Records every Planet upgrade for Satellite, pays the currently unlocked layer, and releases banked higher-layer upgrades as soon as every required poker hand catches up. | Records every consumable through the original function; non-Planet cards do not affect Satellite. |
+| set_hand_usage | Adds Five of a Kind, Flush Five, or Flush House to Satellite's required poker-hand set after that hidden hand is first played. | Preserves vanilla hand-usage bookkeeping for every hand. |
 
 Balance Patch also takes ownership of selected vanilla Jokers, Vouchers, and
-Stakes to change their documented values. Those definitions are direct
-Steamodded center callbacks, not global wrappers.
+Stakes to change their documented values. Satellite uses a Steamodded
+`calc_dollar_bonus` callback to cash out its saved layered total. Red Card is
+no longer owned and therefore uses its full vanilla definition. These
+definitions are direct Steamodded center callbacks, not global wrappers.
 
 ## Bulky Stakes
 
@@ -147,15 +161,16 @@ do not shuffle, flip, or debuff Jokers in the consumable area.
 
 ## Lovely patches
 
-lovely.toml contains seven source patches:
+lovely.toml contains eight source patches:
 
-1. Define configurable interest basis, scale, and effective payout.
-2. Use those values in the interest cash-out row.
-3. Use them in the maximum-interest comparison.
-4. Use them in the round-dollar total.
-5. Show the same values in the cash-out UI.
-6. Make Magic Trick shop cards use the enhanced-card pool.
-7. Give Illusion an equal Edition-only, Seal-only, or both finish roll.
+1. Extend the Game Speed option cycle with `8x`, `16x`, and `256x`.
+2. Define configurable interest basis, scale, and effective payout.
+3. Use those values in the interest cash-out row.
+4. Use them in the maximum-interest comparison.
+5. Use them in the round-dollar total.
+6. Show the same values in the cash-out UI.
+7. Make Magic Trick shop cards use the enhanced-card pool.
+8. Give Illusion an equal Edition-only, Seal-only, or both finish roll.
 
 Every interest expression defaults to vanilla $5 basis and x1 scale when the
 Balance Patch stake modifiers are absent.

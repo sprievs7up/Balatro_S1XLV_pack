@@ -51,6 +51,13 @@ return {
                     "Scoring cards with {C:attention}4{} suits give {X:mult,C:white}X#3#{} Mult",
                 },
             },
+            j_satellite = {
+                text = {
+                    "For each unique {C:planet}Planet card{} used this run",
+                    "earn {C:money}$1{} at end of round",
+                    "Stackable {C:inactive}(Currently {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Earn an extra {C:money}$#1#{} of {C:attention}interest{}",

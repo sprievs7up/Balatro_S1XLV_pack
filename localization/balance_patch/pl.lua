@@ -50,6 +50,13 @@ return {
                     "Punktujące karty w {C:attention}4{} kolorach dają {X:mult,C:white}X#3#{} mnożnika",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Każdy rodzaj karty {C:planet}Planety{} użyty w tym podejściu",
+                    "daje {C:money}1${} na koniec rundy",
+                    "Efekt się kumuluje {C:inactive}(Obecnie {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Na koniec rundy otrzymujesz dodatkowo",

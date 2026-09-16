@@ -51,6 +51,13 @@ return {
                     "Scorende kaarten met {C:attention}4{} kleuren geven {X:mult,C:white}X#3#{} verm.",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Elk type {C:planet}Planeetkaart{} dat je in deze run hebt gebruikt",
+                    "levert aan het einde van de ronde {C:money}$1{} op",
+                    "Stapelbaar {C:inactive}(Momenteel {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Verdien aan het einde van de ronde",

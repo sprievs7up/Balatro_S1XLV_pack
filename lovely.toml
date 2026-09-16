@@ -3,6 +3,17 @@ version = "1.0.0"
 dump_lua = false
 priority = 0
 
+# The vanilla Game settings tab exposes only 0.5x, 1x, 2x, and 4x. The
+# underlying callback already accepts arbitrary numeric values, so extend only
+# the option cycle and preserve the base timing implementation.
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''create_option_cycle({label = localize('b_set_gamespeed'),scale = 0.8, options = {0.5, 1, 2, 4}, opt_callback = 'change_gamespeed', current_option = (G.SETTINGS.GAMESPEED == 0.5 and 1 or G.SETTINGS.GAMESPEED == 4 and 4 or G.SETTINGS.GAMESPEED + 1)}),'''
+position = "at"
+payload = '''create_option_cycle({label = localize('b_set_gamespeed'),scale = 0.8, options = {0.5, 1, 2, 4, 8, 16, 256}, opt_callback = 'change_gamespeed', current_option = ({[0.5] = 1, [1] = 2, [2] = 3, [4] = 4, [8] = 5, [16] = 6, [256] = 7})[G.SETTINGS.GAMESPEED] or 2}),'''
+match_indent = true
+
 # Interest uses the vanilla $5/$1 calculation unless Gold Stake sets the
 # bbp_interest_basis and bbp_interest_scale modifiers.
 [[patches]]

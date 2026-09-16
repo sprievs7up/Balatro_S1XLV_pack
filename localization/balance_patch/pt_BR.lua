@@ -50,6 +50,13 @@ return {
                     "Cartas pontuadas de {C:attention}4{} naipes dão {X:mult,C:white}X#3#{} Multi",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Cada carta de {C:planet}Planeta{} diferente usada nesta partida",
+                    "rende {C:money}$1{} no fim da rodada",
+                    "Acumulável {C:inactive}(Agora {C:money}$#1#{C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Ganhe {C:money}$#1#{} de {C:attention}juros{} extras",

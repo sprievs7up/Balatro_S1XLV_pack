@@ -50,6 +50,13 @@ return {
                     "Les cartes décomptées de {C:attention}4{} couleurs donnent {X:mult,C:white}X#3#{} Multi",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Chaque carte {C:planet}Planète{} différente utilisée cette partie",
+                    "rapporte {C:money}1 ${} en fin de manche",
+                    "Cumulable {C:inactive}(Actuellement {C:money}#1# ${C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Gagne {C:money}$#1#{} d'{C:attention}intérêts{} supplémentaires",

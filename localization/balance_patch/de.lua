@@ -51,6 +51,13 @@ return {
                     "Zählende Karten mit {C:attention}4{} Farben geben {X:mult,C:white}X#3#{} Mult",
                 },
             },
+            j_satellite = {
+                text = {
+                    "Jede in diesem Lauf verwendete Art von {C:planet}Planetenkarte{}",
+                    "bringt am Rundenende {C:money}1 ${}",
+                    "Stapelbar {C:inactive}(Momentan {C:money}#1# ${C:inactive})",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "Verdiene zusätzlich {C:money}#1# ${} {C:attention}Zinsen{}",

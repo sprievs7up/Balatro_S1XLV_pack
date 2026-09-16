@@ -25,7 +25,7 @@ return function(context)
     register_back_atlas('grandmaster_back', 'grandmaster_back.png')
     register_back_atlas('empty_back', 'empty_back.png')
 
-    SMODS.Back {
+    local cartomancer_back = {
         key = 'deck',
         atlas = 'back',
         pos = { x = 0, y = 0 },
@@ -54,7 +54,7 @@ return function(context)
         return hands_left, payout
     end
 
-    SMODS.Back {
+    local icebound_back = {
         key = 'icebound',
         atlas = 'icebound_back',
         pos = { x = 0, y = 0 },
@@ -211,7 +211,7 @@ return function(context)
         starting_params.extra_cards = extra_cards
     end
 
-    SMODS.Back {
+    local small_back = {
         key = 'small',
         atlas = 'small_back_lc',
         lc_atlas = 'small_back_lc',
@@ -246,7 +246,7 @@ return function(context)
         end,
     }
 
-    SMODS.Back {
+    local grandmaster_back = {
         key = 'grandmaster',
         atlas = 'grandmaster_back',
         pos = { x = 0, y = 0 },
@@ -267,7 +267,7 @@ return function(context)
         end,
     }
 
-    SMODS.Back {
+    local blank_back = {
         key = 'blank',
         atlas = 'empty_back',
         pos = { x = 0, y = 0 },
@@ -298,5 +298,11 @@ return function(context)
         end,
     }
 
+    -- Registration order is the order shown after the vanilla Decks.
+    SMODS.Back(cartomancer_back)
+    SMODS.Back(small_back)
+    SMODS.Back(icebound_back)
+    SMODS.Back(grandmaster_back)
     SMODS.Back(inferno_back)
+    SMODS.Back(blank_back)
 end

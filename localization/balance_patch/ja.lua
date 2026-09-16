@@ -50,6 +50,13 @@ return {
                     "得点カードが{C:attention}4{}スートなら{X:mult,C:white}X#3#{}倍率",
                 },
             },
+            j_satellite = {
+                text = {
+                    "このランで{C:planet}惑星カード{}を1種類使用するごとに",
+                    "ラウンド終了時に{C:money}$1{}獲得",
+                    "累積可能{C:inactive}（現在 {C:money}$#1#{C:inactive}）",
+                },
+            },
             j_to_the_moon = {
                 text = {
                     "ラウンド終了時、所持金{C:money}$#2#{}ごとに",
