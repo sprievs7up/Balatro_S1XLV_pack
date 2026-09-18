@@ -688,16 +688,13 @@ take_voucher('magic_trick', {
 
 -- Stake and interest overrides
 
--- To the Moon uses the Gold Stake interest basis when it is active.
-take_joker('to_the_moon', {
-    config = { extra = 1 },
-    loc_vars = function(self, info_queue, card)
-        local extra = card and card.ability and card.ability.extra or self.config.extra
-        local interest_scale = gold_interest_is_active() and 2 or 1
-        local interest_basis = gold_interest_is_active() and 10 or 5
-        return { vars = { extra * interest_scale, interest_basis } }
-    end,
-})
+-- To the Moon keeps a separate uncapped $5/$1 interest pool in every mode.
+local to_the_moon_chunk, to_the_moon_error = SMODS.load_file(
+    'modules/balance_patch/to_the_moon.lua'
+)
+assert(to_the_moon_chunk, ('[Balatro Balance Patch] Could not load To the Moon: %s')
+    :format(tostring(to_the_moon_error)))
+to_the_moon_chunk().register(take_joker)
 
 -- Gold Stake uses a lower interest balance cap, so its interest vouchers use
 -- Gold-specific caps. On all lower Stakes these remain at their vanilla values.

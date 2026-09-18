@@ -161,16 +161,18 @@ do not shuffle, flip, or debuff Jokers in the consumable area.
 
 ## Lovely patches
 
-lovely.toml contains eight source patches:
+lovely.toml contains nine source patches:
 
 1. Extend the Game Speed option cycle with `8x`, `16x`, and `256x`.
-2. Define configurable interest basis, scale, and effective payout.
-3. Use those values in the interest cash-out row.
-4. Use them in the maximum-interest comparison.
-5. Use them in the round-dollar total.
-6. Show the same values in the cash-out UI.
-7. Make Magic Trick shop cards use the enhanced-card pool.
-8. Give Illusion an equal Edition-only, Seal-only, or both finish roll.
+2. Add To the Moon's separate uncapped interest row to round cash-out.
+3. Define configurable base-interest basis, scale, and effective payout.
+4. Use those values in the base-interest cash-out row.
+5. Use them in the maximum-interest comparison.
+6. Use them in the round-dollar total.
+7. Show the same values in the base-interest cash-out UI.
+8. Make Magic Trick shop cards use the enhanced-card pool.
+9. Give Illusion an equal Edition-only, Seal-only, or both finish roll.
 
-Every interest expression defaults to vanilla $5 basis and x1 scale when the
-Balance Patch stake modifiers are absent.
+Base-interest expressions default to the vanilla $5 basis and x1 scale when
+the Balance Patch stake modifiers are absent. In every mode, To the Moon adds
+its own uncapped $1 per $5 without changing the base interest amount or cap.

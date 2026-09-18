@@ -6,7 +6,7 @@
 
 ## English
 
-**Current version:** `v0.1.11`
+**Current version:** `v0.1.12`
 
 Balatro The Grand Master is a vanilla-style content and balance mod for *Balatro*.
 
@@ -14,10 +14,9 @@ It adds new decks and two high-difficulty Stakes, while adjusting selected vanil
 
 The mod is still being tested and refined. Current values are not final.
 
-## v0.1.11 Update
+## v0.1.12 Update
 
-- Recoloured the main-menu vortex with a coral-red centre and light-blue outer palette while retaining its original white highlights and motion.
-- Added `8x`, `16x`, and `256x` choices to the Game Speed setting. The original `0.5x`, `1x`, `2x`, and `4x` choices remain available.
+- To the Moon now costs `$8`. Its extra interest remains `$1` per `$5`, calculated separately with no cap.
 
 ---
 
@@ -60,7 +59,7 @@ The mod is still being tested and refined. Current values are not final.
 | ![Satellite](assets/readme/1x/jokers/satellite.png) | Satellite | Each layered Planet upgrade stacks `$1` of end-of-round payout. |
 | ![Bootstraps](assets/readme/1x/jokers/bootstraps.png) | Bootstraps | Gives `+3` Mult per `$5` held instead of `+2`. |
 | ![Golden Ticket](assets/readme/1x/jokers/golden_ticket.png) | Golden Ticket | Each played Gold Card that scores gives `$5`. |
-| ![To the Moon](assets/readme/1x/jokers/to_the_moon.png) | To the Moon | On Gold Stake, gives an additional `$2` of interest for every `$10` held. |
+| ![To the Moon](assets/readme/1x/jokers/to_the_moon.png) | To the Moon | Costs `$8`; extra interest remains `$1` per `$5`, calculated separately with no cap. |
 
 ### Vanilla Stakes
 
@@ -204,7 +203,7 @@ Consumable slots can be used as Joker slots. Face a special Boss Blind every `4`
 
 ## 简体中文
 
-**当前版本：** `v0.1.11`
+**当前版本：** `v0.1.12`
 
 Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础的内容及平衡调整模组。
 
@@ -212,10 +211,9 @@ Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础
 
 当前版本仍在持续测试与调整，现有数值不代表最终版本。
 
-## v0.1.11 更新
+## v0.1.12 更新
 
-- 将主界面漩涡改为珊瑚红色中心与浅蓝色外圈，同时保留原有的白色高光细节与动态效果。
-- 在“游戏速度”设置中新增 `8×`、`16×` 与 `256×`，并保留原有的 `0.5×`、`1×`、`2×` 与 `4×`。
+- “冲向月球”售价调整为 `$8`；额外利息仍按每 `$5` 获得 `$1`，独立计算且无上限。
 
 ---
 
@@ -258,7 +256,7 @@ Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础
 | ![卫星](assets/readme/1x/jokers/satellite.png) | 卫星 | 每次逐层生效的星球牌升级可叠加 `$1` 回合结束收益。 |
 | ![提靴带](assets/readme/1x/jokers/bootstraps.png) | 提靴带 | 每持有 `$5`，由 `+2` 提高至 `+3` 倍率。 |
 | ![黄金门票](assets/readme/1x/jokers/golden_ticket.png) | 黄金门票 | 每张打出并计分的黄金牌获得 `$5`。 |
-| ![冲向月球](assets/readme/1x/jokers/to_the_moon.png) | 冲向月球 | 金注下每持有 `$10`，额外获得 `$2` 利息。 |
+| ![冲向月球](assets/readme/1x/jokers/to_the_moon.png) | 冲向月球 | 售价 `$8`；额外利息仍按每 `$5` 获得 `$1`，独立计算且无上限。 |
 
 ### 原版注难度
 

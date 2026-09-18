@@ -108,8 +108,6 @@ local function apply_extra_passive_delta(card, direction)
         for key, value in pairs(G.GAME.probabilities) do
             G.GAME.probabilities[key] = value * factor
         end
-    elseif center_key == 'j_to_the_moon' then
-        G.GAME.interest_amount = G.GAME.interest_amount + direction * ability.extra
     elseif center_key == 'j_troubadour' then
         change_hand_size(direction * ability.extra.h_size)
         G.GAME.round_resets.hands = G.GAME.round_resets.hands + direction * ability.extra.h_plays
