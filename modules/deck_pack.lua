@@ -100,7 +100,7 @@ local settings = {
         showdown_interval = 4,
     },
     blank = {
-        starting_packs = 20,
+        starting_packs = 26,
         starting_seal_chance = 0.02,
         starting_enhanced_chance = 0.10,
         starting_edition_chance = 0.05,

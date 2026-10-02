@@ -59,7 +59,7 @@ return function(context)
 
     -- Steamodded's owned Standard boosters pass Base/Enhanced, Edition, and
     -- Seal results through SMODS.create_card. Reroll Base/Enhanced at 10% and
-    -- Edition occurrence at 5% for only the 100 starting-draft offers. The
+    -- Edition occurrence at 5% for only the 130 starting-draft offers. The
     -- upstream guaranteed Edition roll retains the normal Foil/Holographic/
     -- Polychrome mix; Negative remains excluded as in Standard Packs.
     if SMODS and SMODS.create_card and SMODS.poll_edition
@@ -258,7 +258,7 @@ return function(context)
         remove_skip_booster_nodes
 
     -- Hook: create_UIBox_standard_pack
-    -- Only the 20 generated starting packs omit their Skip button. Later
+    -- Only the 26 generated starting packs omit their Skip button. Later
     -- Standard Packs in the same Blank Deck run retain the vanilla UI.
     if create_UIBox_standard_pack
         and not hooks.originals.blank_create_UIBox_standard_pack then
@@ -287,7 +287,7 @@ return function(context)
     end
 
     -- Hook: G.FUNCS.end_consumeable
-    -- Each completed starting pack consumes exactly one of the 20
+    -- Each completed starting pack consumes exactly one of the 26
     -- grants. The update watchdog opens the next one after the UI has safely
     -- returned to Blind Select.
     if G and G.FUNCS and G.FUNCS.end_consumeable
@@ -334,7 +334,7 @@ return function(context)
 
     -- Hook: Game:update
     -- Game:start_run opens the first pack before the Blind UI exists. After
-    -- each pack, retry when vanilla restores BLIND_SELECT; after the twentieth,
+    -- each pack, retry when vanilla restores BLIND_SELECT; after the last pack,
     -- release vanilla to create the Blind Select UI normally.
     if Game and Game.update and not hooks.originals.blank_game_update then
         hooks.originals.blank_game_update = Game.update

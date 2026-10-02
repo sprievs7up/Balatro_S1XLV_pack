@@ -111,13 +111,13 @@ The Deck Pack is split into seven files:
 
 | Hook | Purpose | Normal fallback |
 | --- | --- | --- |
-| Game:update | Opens the next randomly selected Mega Standard Pack variant whenever pack cleanup returns to `BLIND_SELECT`, then releases vanilla to create the Blind Select UI after pack `20`. | Calls the original update first and does nothing outside a Blank Deck starting draft. |
-| create_UIBox_standard_pack | Removes the **Skip** button from only the `20` generated Blank Deck starting packs. | Later packs in the same run and every other deck keep the original Standard Pack UI. |
+| Game:update | Opens the next randomly selected Mega Standard Pack variant whenever pack cleanup returns to `BLIND_SELECT`, then releases vanilla to create the Blind Select UI after pack `26`. | Calls the original update first and does nothing outside a Blank Deck starting draft. |
+| create_UIBox_standard_pack | Removes the **Skip** button from only the `26` generated Blank Deck starting packs. | Later packs in the same run and every other deck keep the original Standard Pack UI. |
 | G.FUNCS.skip_booster | Blocks controller shortcuts or another mod from bypassing the mandatory starting-pack choices. | Delegates after the starting draft and for every other pack. |
-| G.FUNCS.end_consumeable | Counts one completed starting Mega Standard Pack and records the final drafted deck size after all `20` are resolved. | Delegates every non-starting pack unchanged. |
+| G.FUNCS.end_consumeable | Counts one completed starting Mega Standard Pack and records the 52-card starting baseline after all `26` are resolved. | Delegates every non-starting pack unchanged. |
 | G.FUNCS.select_blind / skip_blind | Prevents a zero-card Blank Deck from advancing a Blind before its starting draft is complete. | Delegates after the draft and for every other deck. |
-| SMODS.poll_seal | Gives only the `100` cards offered by the `20` starting Mega Standard Packs an independent `2%` Seal roll; also removes Blue from natural Cartomancer rolls. | Only the exact starting-draft Standard Pack call is intercepted; later Standard Packs retain their original `{mod = 10}` roll. |
-| SMODS.create_card | Rerolls only those `100` starting-pack cards at independent `10%` Enhanced and `5%` Edition rates, explicitly clearing the upstream Edition on a miss. | Later Standard Packs and all non-Standard creation delegate unchanged. |
+| SMODS.poll_seal | Gives only the `130` cards offered by the `26` starting Mega Standard Packs an independent `2%` Seal roll; also removes Blue from natural Cartomancer rolls. | Only the exact starting-draft Standard Pack call is intercepted; later Standard Packs retain their original `{mod = 10}` roll. |
+| SMODS.create_card | Rerolls only those `130` starting-pack cards at independent `10%` Enhanced and `5%` Edition rates, explicitly clearing the upstream Edition on a miss. | Later Standard Packs and all non-Standard creation delegate unchanged. |
 | get_pack | Chooses generic shop Booster Pack kinds at `70%` Standard, `10%` Buffoon, `10%` Celestial, `8%` Arcana, and `2%` Spectral, including the first shop. | Explicitly requested pack kinds and every non-Blank run delegate unchanged. |
 | Card:set_cost | Prices Blank Deck Standard Packs one discount tier ahead: `25%` before Clearance Sale, `50%` after it, and still `50%` after Liquidation. | Other packs, shop items, and non-Blank runs use the upstream price calculation unchanged. |
 | Blank Back calculate | Returns Steamodded's `remove` flag for non-debuffed scoring cards in `G.play`; Steamodded then shatters Glass Cards and dissolves all other scored cards. | Unscored played cards, held cards, debuffed cards, and every other deck are unaffected. |

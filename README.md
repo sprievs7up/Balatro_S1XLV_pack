@@ -6,19 +6,13 @@
 
 ## English
 
-**Current version:** `v0.1.12`
+**Current version:** `v0.1.13`
 
 Balatro The Grand Master is a vanilla-style content and balance mod for *Balatro*.
 
 It adds new decks and two high-difficulty Stakes, while adjusting selected vanilla Jokers, Vouchers, and high-Stake rules. The goal is to preserve the feel of the base game while opening up more viable builds and alternative starting strategies.
 
 The mod is still being tested and refined. Current values are not final.
-
-## v0.1.12 Update
-
-- To the Moon now costs `$8`. Its extra interest remains `$1` per `$5`, calculated separately with no cap.
-
----
 
 ## Vanilla Content Changes
 
@@ -203,19 +197,13 @@ Consumable slots can be used as Joker slots. Face a special Boss Blind every `4`
 
 ## 简体中文
 
-**当前版本：** `v0.1.12`
+**当前版本：** `v0.1.13`
 
 Balatro The Grand Master 是一个以《Balatro》原版美术与玩法为基础的内容及平衡调整模组。
 
 模组新增牌组、两级高难度注，并调整部分原版小丑牌、优惠券与高难度规则，目标是在保留原版体验的同时提供更多可用构筑和不同的开局方式。
 
 当前版本仍在持续测试与调整，现有数值不代表最终版本。
-
-## v0.1.12 更新
-
-- “冲向月球”售价调整为 `$8`；额外利息仍按每 `$5` 获得 `$1`，独立计算且无上限。
-
----
 
 ## 原版内容调整
 
